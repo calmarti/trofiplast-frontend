@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Container fluid>
       <Row>
-        <Col>
+        <Col xs={2}>
           <Navbar />
         </Col >
         <Col>
