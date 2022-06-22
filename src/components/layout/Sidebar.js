@@ -1,16 +1,15 @@
-// import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
-//TODO: cambiar Nav por Navbar vertical (find out how)
-//TODO: si se hace el cambio eliminar clase flex-column
+
+//TODO: decidir en algun momento si eliminar o no clase flex-column
 
 export default function Sidebar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="xs">
+    <Navbar style={{ border: "4px solid black", height: "inherit" }} bg="primary" variant="dark" expand="xs">
       <Container>
-        <Nav className="flex-column">
+        <Nav className="navcomp">
           <Nav.Link href="">Home</Nav.Link>
           <Nav.Link href="">Database</Nav.Link>
           <Nav.Link href="">Contribution</Nav.Link>
