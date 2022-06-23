@@ -1,7 +1,12 @@
-.alert-heading{
-text-align: center;
+
+.alert-component {
+
 }
 
-.alert-oneliner{
-    text-align: center;
+.alert-heading {
+  text-align: center;
+}
+
+.alert-oneliner {
+  text-align: center;
 }
