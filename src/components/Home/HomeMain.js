@@ -1,6 +1,8 @@
 import Alert from "react-bootstrap/Alert";
 import Figure from "react-bootstrap/Figure";
+import FigureImage from "react-bootstrap/FigureImage";
 // import FigureImage from 'react-bootstrap/FigureImage'
+import image from "../../images/cronoplast-main.png";
 
 //TODO: insertar un accordion 'Database' entre Alert y main con dos opciones en el Alert.Body:
 //Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link
@@ -39,16 +41,14 @@ export default function HomeMain() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum."
         </p>
-        <Figure>
-          <Figure.Image
-            width={400}
-            height={400}
-            alt=""
-            src="../../../public/cronoplast-main.tif"
-          />
+        {/*       <img
+          src = {image}   
+          style={{ width: "768px", height: "432px" }}
+        /> */}
+        <Figure className="figure" >
+          <Figure.Image width={640} height={360} alt="" src={image} />
         </Figure>
       </Alert>
-      
     </main>
   );
 }

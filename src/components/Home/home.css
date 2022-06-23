@@ -10,3 +10,8 @@
 .alert-oneliner {
   text-align: center;
 }
+
+.figure{
+  position:relative;
+  left:29%;
+}
