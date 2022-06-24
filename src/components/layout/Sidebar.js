@@ -2,30 +2,22 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
-
-//TODO: decidir en algun momento si eliminar o no clase flex-column
+//la clase utilty 'h-100' de Navbar expande el Sidebar hasta el 100 de la altura del padre
 
 export default function Sidebar() {
   return (
-    <Navbar style={{  height: "inherit" }} bg="primary" variant="dark" expand="xs">
-      <Container>
-        <Nav className="navcomp">
-          <Nav.Link href="">Home</Nav.Link>
-          <Nav.Link href="">Search the database</Nav.Link>
-          <Nav.Link href="">Contribute</Nav.Link>
-          <Nav.Link href="">About</Nav.Link>
+    <Navbar bg="info" variant="" className="navbar h-100" expand="xs" >
+     {/*  <Container> */}
+        <Nav  className="flex-column">
+          <Nav.Link href="" className="nav-item">Home</Nav.Link>
+          <Nav.Link href="" className="nav-item">Search the database</Nav.Link>
+          <Nav.Link href="" className="nav-item">Contribute</Nav.Link>
+          <Nav.Link href="" className="nav-item">About</Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}
-          <Nav.Link href="">Contact</Nav.Link>
+          <Nav.Link href="" className="nav-item">Contact</Nav.Link>
         </Nav>
-      </Container>
+    {/*   </Container> */}
     </Navbar>
   );
 }
 
-// <Nav className="flex-column" defaultActiveKey="/">
-//   <Nav.Link>Home</Nav.Link>
-//   <Nav.Link>Database</Nav.Link>
-//   <Nav.Link>Contributions</Nav.Link>
-//   <Nav.Link>About Cronoplast</Nav.Link>
-//   <Nav.Link>Contact</Nav.Link>
-// </Nav>

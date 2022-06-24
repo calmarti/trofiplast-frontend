@@ -6,8 +6,11 @@ import Button from "react-bootstrap/Button";
 // import FigureImage from 'react-bootstrap/FigureImage'
 import image from "../../images/cronoplast-main.png";
 
-//TODO: insertar un accordion 'Database' entre Alert y main con dos opciones en el Alert.Body:
-//Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link as a Button
+//TODO: elemento 'main' pierde la altura del padre (column y row): 16 px menos
+//TODO: responsiveness: el único que es responsive es el main; y dentro de este NO es responsive el accordion o los botones
+//el sidebar es responsive a medias pero necesita colapsarse en un menú de hamburguesa o algo así
+//TODO: Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link as a Button
+
 
 export default function HomeMain() {
   return (
@@ -38,13 +41,7 @@ export default function HomeMain() {
           commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
           velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum." "Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum."
+          mollit anim id est laborum."
         </p>
 
         <hr />
@@ -58,7 +55,7 @@ export default function HomeMain() {
               <Button as="a" href="/database" className="search-button" size="lg" variant="primary">
                 Search
               </Button>
-              <Button as="a" href="/contributions" className="contrib-button" size="lg" variant="dark">
+              <Button as="a" href="/contributions" className="contrib-button" size="lg" variant="info">
                 Contribute
               </Button>
             </Accordion.Body>

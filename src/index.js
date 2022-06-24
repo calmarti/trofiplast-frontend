@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 
 //CSS con módulos React-bootstrap y bootstrap (no usa enlaces al CDN ni otros links a temas de bootstrap en el index)
+//Para acceder a más colores most certainly hay que usar Sass: confirmar o ver si hay workaround
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
