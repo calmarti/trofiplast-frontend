@@ -1,27 +1,29 @@
 import Alert from "react-bootstrap/Alert";
 import Figure from "react-bootstrap/Figure";
 import FigureImage from "react-bootstrap/FigureImage";
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
 // import FigureImage from 'react-bootstrap/FigureImage'
 import image from "../../images/cronoplast-main.png";
 
 //TODO: insertar un accordion 'Database' entre Alert y main con dos opciones en el Alert.Body:
-//Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link
-
-//TODO: no muestra la imagen, probar:
-//- convirtiendola a .pnp
+//Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link as a Button
 
 export default function HomeMain() {
   return (
     <main>
       <Alert className="alert-component py-5" variant="primary">
         <br />
-        <Alert.Heading className="alert-heading">Cronoplast</Alert.Heading>
+        <Alert.Heading as="h1" className="alert-heading">
+          Cronoplast
+        </Alert.Heading>
         <p className="alert-oneliner">
-          A database of ingested plastics in marine animals
+          A worldwide database of ingested plastics in animals
         </p>
         <br />
         <br />
         <hr />
+
         <p>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -29,23 +31,41 @@ export default function HomeMain() {
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum." "Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum."
         </p>
+
         <hr />
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-        {/*       <img
-          src = {image}   
-          style={{ width: "768px", height: "432px" }}
-        /> */}
-        <Figure className="figure" >
+
+        <Accordion className="accordion">
+          <Accordion.Item eventKey="0">
+            <Accordion.Header className="accordion-header">
+              <span className="accordion-header">Database</span>
+            </Accordion.Header>
+            <Accordion.Body>
+              <Button as="a" href="/database" className="search-button" size="lg" variant="primary">
+                Search
+              </Button>
+              <Button as="a" href="/contributions" className="contrib-button" size="lg" variant="dark">
+                Contribute
+              </Button>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+
+        <Figure className="figure">
           <Figure.Image width={640} height={360} alt="" src={image} />
         </Figure>
       </Alert>

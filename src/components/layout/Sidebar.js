@@ -7,12 +7,12 @@ import Nav from "react-bootstrap/Nav";
 
 export default function Sidebar() {
   return (
-    <Navbar style={{ border: "4px solid black", height: "inherit" }} bg="primary" variant="dark" expand="xs">
+    <Navbar style={{  height: "inherit" }} bg="primary" variant="dark" expand="xs">
       <Container>
         <Nav className="navcomp">
           <Nav.Link href="">Home</Nav.Link>
-          <Nav.Link href="">Database</Nav.Link>
-          <Nav.Link href="">Contribution</Nav.Link>
+          <Nav.Link href="">Search the database</Nav.Link>
+          <Nav.Link href="">Contribute</Nav.Link>
           <Nav.Link href="">About</Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}
           <Nav.Link href="">Contact</Nav.Link>

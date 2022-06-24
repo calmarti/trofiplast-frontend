@@ -1,17 +1,36 @@
-
 .alert-component {
-
+  font-size: large;
+  text-align: center;
 }
 
 .alert-heading {
-  text-align: center;
 }
 
 .alert-oneliner {
-  text-align: center;
+  font-size: 1.3rem;
 }
 
-.figure{
-  position:relative;
-  left:29%;
+.accordion {
+  position: relative;
+  top: 30px;
+  margin: 0 auto;
+  width: 30%;
+  margin-bottom: 80px;
+}
+.accordion-header {
+  font-size: 1.3rem;
+}
+
+.search-button {
+  margin-top: 2px;
+  width: 300px;
+}
+
+.contrib-button {
+  margin-top: 8px;
+  width: 300px;
+}
+.figure {
+  position: relative;
+  top: 40px;
 }
