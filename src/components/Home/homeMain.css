@@ -6,6 +6,7 @@
 }
 
 .alert-heading {
+
 }
 
 .alert-oneliner {
@@ -18,9 +19,11 @@
   margin: 0 auto;
   width: 30%;
   margin-bottom: 80px;
+  
 }
 .accordion-header {
   font-size: 1.3rem;
+  
 }
 
 .search-button {
@@ -35,4 +38,9 @@
 .figure {
   position: relative;
   top: 40px;
+  
+}
+
+.figure-image{
+  border-radius: 50%;
 }

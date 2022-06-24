@@ -11,7 +11,6 @@ import image from "../../images/cronoplast-main.png";
 //el sidebar es responsive a medias pero necesita colapsarse en un menú de hamburguesa o algo así
 //TODO: Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link as a Button
 
-
 export default function HomeMain() {
   return (
     <main>
@@ -47,15 +46,27 @@ export default function HomeMain() {
         <hr />
 
         <Accordion className="accordion">
-          <Accordion.Item eventKey="0">
-            <Accordion.Header className="accordion-header">
+          <Accordion.Item  eventKey="0" className="bg-primary-outline">
+            <Accordion.Header>
               <span className="accordion-header">Database</span>
             </Accordion.Header>
             <Accordion.Body>
-              <Button as="a" href="/database" className="search-button" size="lg" variant="primary">
+              <Button
+                as="a"
+                href="/database"
+                className="search-button"
+                size="lg"
+                variant="outline-primary"
+              >
                 Search
               </Button>
-              <Button as="a" href="/contributions" className="contrib-button" size="lg" variant="info">
+              <Button
+                as="a"
+                href="/contributions"
+                className="contrib-button"
+                size="lg"
+                variant="outline-info"
+              >
                 Contribute
               </Button>
             </Accordion.Body>
@@ -63,7 +74,13 @@ export default function HomeMain() {
         </Accordion>
 
         <Figure className="figure">
-          <Figure.Image width={640} height={360} alt="" src={image} />
+          <Figure.Image
+            width={640}
+            height={360}
+            alt=""
+            src={image}
+            className="figure-image"
+          />
         </Figure>
       </Alert>
     </main>
