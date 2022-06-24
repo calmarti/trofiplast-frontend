@@ -4,7 +4,7 @@
 
 
 .flex-column{
-    width: 100%;
+    /* width: 100%; */
     height: inherit;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,6 +14,8 @@
     font-size: 1.3rem;
 }
 
-/* .nav-item{
-    flex-grow: //PENDIENTE DE PROBAR DE SER NECESARIO
-} */
+.nav-item{
+
+    text-align: center
+    /* flex-grow: //PENDIENTE DE PROBAR DE SER NECESARIO */
+}

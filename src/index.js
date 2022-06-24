@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./globals.css";
 import "./components/layout/layout.css";
-import "./components/Home/home.css";
+import "./components/Home/homeMain.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 
