@@ -1,7 +1,16 @@
 .search-alert-component{
-    text-align: center;
+  
 }
 
-.search-alert-heading{
-   
+.search-alert-heading, .search-alert-summary {
+   text-align: center;
+   padding-top:20px;
+}
+
+
+
+
+.select-label{
+   position:relative;
+   left:48px;
 }
