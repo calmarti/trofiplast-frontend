@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 // import FigureImage from 'react-bootstrap/FigureImage'
 import image from "../../images/cronoplast-main.png";
 
+//TODO: gema: revisión del título
 //TODO: elemento 'main' pierde la altura del padre (column y row): 16 px menos
 //TODO: responsiveness: el único que es responsive es el main; y dentro de este NO es responsive el accordion o los botones
 //el sidebar es responsive a medias pero necesita colapsarse en un menú de hamburguesa o algo así
@@ -16,7 +17,7 @@ export default function HomeMain() {
     <main>
       <Alert className="alert-component py-5" variant="primary">
         <br />
-        <Alert.Heading as="h1" className="alert-heading">
+        <Alert.Heading as="h1" className="alert-heading display-4">
           Cronoplast
         </Alert.Heading>
         <p className="alert-oneliner">
@@ -53,7 +54,7 @@ export default function HomeMain() {
             <Accordion.Body>
               <Button
                 as="a"
-                href="/database"
+                href="/search"
                 className="search-button"
                 size="lg"
                 variant="outline-primary"
@@ -62,7 +63,7 @@ export default function HomeMain() {
               </Button>
               <Button
                 as="a"
-                href="/contributions"
+                href="/contribute"
                 className="contrib-button"
                 size="lg"
                 variant="outline-info"

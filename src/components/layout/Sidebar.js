@@ -11,8 +11,8 @@ export default function Sidebar() {
     <Navbar bg="" variant="" className="navbar h-100" expand="xs" >
      {/*  <Container> */}
         <Nav  className="flex-column">
-          <Nav.Link href="" className="nav-item">Home</Nav.Link>
-          <Nav.Link href="" className="nav-item">Search the database</Nav.Link>
+          <Nav.Link href="/" className="nav-item">Home</Nav.Link>
+          <Nav.Link href="/search" className="nav-item">Search the database</Nav.Link>
           <Nav.Link href="" className="nav-item">Contribute</Nav.Link>
           <Nav.Link href="" className="nav-item">About</Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}
