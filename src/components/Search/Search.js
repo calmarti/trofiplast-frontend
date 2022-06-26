@@ -10,9 +10,24 @@ import { useState, useEffect } from "react";
 
 import client from "../../api/client";
 
+
+//TODO: renderizado condicional de tabla tras handleSubmit, sino renderiza mensaje de resultado vacío
+//TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
+//TODO: handleReset: ojo: button es type reset, ¿está bien?
+
 export default function Search() {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
+  const [fieldValues, setFieldValues] = useState({
+    group: [],
+    family: [],
+    genus: [],
+    species: [],
+    area: [],
+    country: [],
+    // from: null,
+    // to: null,
+  });
   const [filters, setFilters] = useState({
     group: "",
     family: "",
@@ -24,7 +39,24 @@ export default function Search() {
     to: null,
   });
 
-  console.log(filters);
+  useEffect(() => {
+    for (let field in fieldValues) {
+      console.log(field);
+      client
+        .get(`${process.env.REACT_APP_API_BASE_URL}/apiv1/fields/${field}`)
+        .then((data) =>
+          setFieldValues((currentState) => ({
+            ...currentState,
+            [field]: data.result,
+          }))
+        )
+        .catch((error) => console.log(error));
+    }
+  }, []);
+
+  // console.log(fieldValues);
+  // console.log(filters);
+  console.log(items);
 
   const handleChange = (ev) => {
     setFilters((currentState) => ({
@@ -36,11 +68,6 @@ export default function Search() {
   const handleReset = () => {
     //reset all filters
   };
-
-
-  //llamada al api con handleSubmit
-  //recibo respuesta y si hay registros cambio el estado 'items' y pinto tabla de resultados
-  // sino muestro mensaje tipo "no hay registros con esos filtros"
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -61,7 +88,7 @@ export default function Search() {
 
         <Col className="px-0">
           <Alert className="search-alert-component py-5" variant="primary">
-            <Alert.Heading  className="search-alert-heading">
+            <Alert.Heading className="search-alert-heading">
               Search the Cronoplast database
             </Alert.Heading>
             <hr />
@@ -89,11 +116,18 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="Fish">Fish</option>
+                        {fieldValues.group &&
+                          fieldValues.group.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+
+                        {/* <option value="Fish">Fish</option>
                         <option value="Terrestrial Mammal">
                           Terrestrial Mammal
                         </option>
-                        <option value="Marine mammal">Marine mammal</option>
+                        <option value="Marine mammal">Marine mammal</option> */}
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -108,9 +142,16 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="1">One</option>
+                        {fieldValues.family &&
+                          fieldValues.family.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+
+                        {/* <option value="Myctophidae">Myctophidae</option>
                         <option value="2">Two</option>
-                        <option value="3">A long option indeed</option>
+                        <option value="3">A long option indeed</option> */}
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -129,9 +170,16 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="1">One</option>
+                        {fieldValues.genus &&
+                          fieldValues.genus.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+
+                        {/* <option value="1">One</option>
                         <option value="2">Two</option>
-                        <option value="3">A long option indeed</option>
+                        <option value="3">A long option indeed</option> */}
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -146,9 +194,16 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="1">One</option>
+                        {fieldValues.species &&
+                          fieldValues.species.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+
+                        {/* <option value="1">One</option>
                         <option value="2">Two</option>
-                        <option value="3">A long option indeed</option>
+                        <option value="3">A long option indeed</option> */}
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -167,9 +222,16 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="1">One</option>
+                        {fieldValues.area &&
+                          fieldValues.area.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+
+                        {/* <option value="1">One</option>
                         <option value="2">Two</option>
-                        <option value="3">A long option indeed</option>
+                        <option value="3">A long option indeed</option> */}
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -184,9 +246,18 @@ export default function Search() {
                         onChange={handleChange}
                       >
                         <option></option>
-                        <option value="1">One</option>
+                        {fieldValues.country &&
+                          fieldValues.country.map((value, index) => (
+                            <option key={index} value={value}>
+                              {value}
+                            </option>
+                          ))}
+                        
+
+                        {/* <option value="1">One</option>
                         <option value="2">Two</option>
-                        <option value="3">A long option indeed</option>
+                        <option value="3">A long option indeed</option> */}
+                        
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -204,7 +275,7 @@ export default function Search() {
                       variant="outline-primary"
                       onClick={handleSubmit}
                     >
-                      Search
+                      Submit
                     </Button>{" "}
                   </Col>
                   <Col xs={{ span: 0, offset: 0 }}>
