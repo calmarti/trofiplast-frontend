@@ -1,16 +1,19 @@
-.search-alert-component{
-  
+.search-alert-component {
+  /* font-size: larger; */
 }
 
-.search-alert-heading, .search-alert-summary {
-   text-align: center;
-   padding-top:20px;
+.search-alert-heading,
+.search-alert-summary {
+  text-align: center;
+  padding-top: 20px;
 }
 
+.select-label {
+  position: relative;
+  left: 48px;
+}
 
-
-
-.select-label{
-   position:relative;
-   left:48px;
+.button-container {
+  position: relative;
+  left: 42px;
 }

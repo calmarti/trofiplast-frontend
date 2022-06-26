@@ -5,10 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Stack from "react-bootstrap/Stack";
 import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
+
+import client from "../../api/client";
 
 export default function Search() {
   const [items, setItems] = useState([]);
+  const [error, setError] = useState(null);
   const [filters, setFilters] = useState({
     group: "",
     family: "",
@@ -29,11 +33,23 @@ export default function Search() {
     }));
   };
 
-  //llamada al api con handleSubmit
-  //recibo respuesta y si hay registros cambio el estado 'items' y pinto tabla de resultados, sino muestro mensaje tipo "no hay registros con esos filtros"
+  const handleReset = () => {
+    //reset all filters
+  };
 
-  const handleSubmit = () => {
-    
+
+  //llamada al api con handleSubmit
+  //recibo respuesta y si hay registros cambio el estado 'items' y pinto tabla de resultados
+  // sino muestro mensaje tipo "no hay registros con esos filtros"
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    client
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/apiv1/items/?group=${filters.group}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
+      )
+      .then((data) => setItems(data))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -45,7 +61,7 @@ export default function Search() {
 
         <Col className="px-0">
           <Alert className="search-alert-component py-5" variant="primary">
-            <Alert.Heading className="search-alert-heading">
+            <Alert.Heading  className="search-alert-heading">
               Search the Cronoplast database
             </Alert.Heading>
             <hr />
@@ -63,7 +79,7 @@ export default function Search() {
                 {/*    <Form.Text>Grupo taxonómico</Form.Text> */}
 
                 <Row>
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">General group</span>
                       <Form.Select
@@ -82,7 +98,7 @@ export default function Search() {
                     </Form.Label>
                   </Form.Group>
 
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">Family</span>
                       <Form.Select
@@ -103,7 +119,7 @@ export default function Search() {
 
               <Container className="w-50">
                 <Row>
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">Genus</span>
                       <Form.Select
@@ -120,7 +136,7 @@ export default function Search() {
                     </Form.Label>
                   </Form.Group>
 
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">Species</span>
                       <Form.Select
@@ -141,7 +157,7 @@ export default function Search() {
 
               <Container className="w-50">
                 <Row>
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">Area</span>
                       <Form.Select
@@ -158,7 +174,7 @@ export default function Search() {
                     </Form.Label>
                   </Form.Group>
 
-                  <Form.Group as={Col} className="mx-4">
+                  <Form.Group as={Col} className="mx-2">
                     <Form.Label>
                       <span className="select-label">Country</span>
                       <Form.Select
@@ -177,9 +193,34 @@ export default function Search() {
                 </Row>
               </Container>
 
-              {/* Date: 2 input text (years): from y to/}
+              {/* Date: 2 input text (years): from y to/*/}
 
-                {/* botón de reset y botón de continue */}
+              <Container className="w-50 my-4 button-container">
+                <Row xs={2} className="">
+                  <Col xs={{ span: 2, offset: 4 }}>
+                    <Button
+                      size="md"
+                      type="submit"
+                      variant="outline-primary"
+                      onClick={handleSubmit}
+                    >
+                      Search
+                    </Button>{" "}
+                  </Col>
+                  <Col xs={{ span: 0, offset: 0 }}>
+                    <Button
+                      size="md"
+                      type="reset"
+                      variant="outline-info"
+                      onClick={handleReset}
+                    >
+                      Reset
+                    </Button>
+                  </Col>
+                </Row>
+              </Container>
+
+              {/* botón de reset y botón de continue */}
 
               {/*   </Stack> */}
             </Form>
