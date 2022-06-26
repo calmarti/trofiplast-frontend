@@ -20,6 +20,12 @@ export default function Search() {
     to: null,
   });
 
+  console.log(filters);
+
+  const handleChange = (ev) => {
+    setFilters(currentState => ({...currentState, [ev.target.name]: ev.target.value }));
+  };
+
   return (
     <Container fluid>
       <Row>
@@ -50,11 +56,11 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">General group</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="group" onChange={handleChange}>
                         <option></option>
-                        <option value="1">Fish</option>
-                        <option value="2">Terrestrial Mammal</option>
-                        <option value="3">Three</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Terrestrial Mammal">Terrestrial Mammal</option>
+                        <option value="Marine mammal">Marine mammal</option>
                       </Form.Select>
                     </Form.Label>
                   </Form.Group>
@@ -62,7 +68,7 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">Family</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="family" onChange={handleChange}>
                         <option></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -78,7 +84,7 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">Genus</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="genus" onChange={handleChange}>
                         <option></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -90,7 +96,7 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">Species</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="species" onChange={handleChange}>
                         <option></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -106,7 +112,7 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">Area</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="area" onChange={handleChange}>
                         <option></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -118,7 +124,7 @@ export default function Search() {
                   <Form.Group as={Col} className="mx-4">
                     <Form.Label>
                       <span className="select-label">Country</span>
-                      <Form.Select className="mx-5 my-3" defaultValue="">
+                      <Form.Select className="mx-5 my-3" defaultValue="" name="country" onChange={handleChange}>
                         <option></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
