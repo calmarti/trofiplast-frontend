@@ -21,3 +21,10 @@
   position: relative;
   left: 42px;
 }
+
+
+.search-result-alert-heading{
+  text-align: center;
+  padding-top: 20px;
+}
+

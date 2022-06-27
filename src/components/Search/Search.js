@@ -8,14 +8,16 @@ import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 import SelectCol from "./SelectCol";
+import SearchResult from "./SearchResult";
 import client from "../../api/client";
 
-//TODO: refactorizar => encapsular en componente Select y borrar codigo comentado desechable
+
 //TODO: renderizado condicional de tabla tras handleSubmit, sino renderiza mensaje de resultado vacío
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: handleReset: ojo: button es type reset, ¿está bien? (parece que no: tras reset al hacer submit con filtros no devuelve nada)
-//TODO: componente Error
-//TODO: handleSubmit: tras una búsqueda cuando todos los campos del form se vuelven a poner en blanco al hacer submit devuelve todos los items!
+//TODO: componentes que faltan: Error, SearchResult, Pagination, Detail, Contribute, Contact
+
+
 
 export default function Search() {
   const [items, setItems] = useState(null);
@@ -83,13 +85,13 @@ export default function Search() {
 
   return (
     <>
-      {!items ? (
-        <Container fluid>
-          <Row>
-            <Col xs={1} className="px-0">
-              <Sidebar />
-            </Col>
+      <Container fluid>
+        <Row>
+          <Col xs={1} className="px-0">
+            <Sidebar />
+          </Col>
 
+          {items===null ? (
             <Col className="px-0">
               <Alert className="search-alert-component py-5" variant="primary">
                 <Alert.Heading className="search-alert-heading">
@@ -198,9 +200,15 @@ export default function Search() {
                 </Form>
               </Alert>
             </Col>
-          </Row>
-        </Container>
-      ) : "Hay items"}
+          ) : (
+
+            <Col className="px-0">
+            <SearchResult items={items} />
+            </Col>
+          )}
+
+        </Row>
+      </Container>
     </>
   );
 }
