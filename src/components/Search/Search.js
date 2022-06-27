@@ -11,8 +11,8 @@ import SelectCol from "./SelectCol";
 import SearchResult from "./SearchResult";
 import client from "../../api/client";
 
-
-//TODO: renderizado condicional de tabla tras handleSubmit, sino renderiza mensaje de resultado vacío
+//TODO: centrar verticalmente el menú
+//TODO: que la foto quepa en el Home al cargarse
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: handleReset: ojo: button es type reset, ¿está bien? (parece que no: tras reset al hacer submit con filtros no devuelve nada)
 //TODO: componentes que faltan: Error, SearchResult, Pagination, Detail, Contribute, Contact
