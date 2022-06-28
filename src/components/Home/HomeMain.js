@@ -6,8 +6,8 @@ import Button from "react-bootstrap/Button";
 // import FigureImage from 'react-bootstrap/FigureImage'
 import image from "../../images/cronoplast-main.png";
 
-//TODO: gema: revisión del título
-//TODO: elemento 'main' pierde la altura del padre (column y row): 16 px menos
+
+//TODO: elemento 'main' pierde la altura del padre (column y row): 16 px menos ==> solución: ajustar la altura de la fila a un valor apropiado (heredada por columnas y todo lo demás)
 //TODO: responsiveness: el único que es responsive es el main; y dentro de este NO es responsive el accordion o los botones
 //el sidebar es responsive a medias pero necesita colapsarse en un menú de hamburguesa o algo así
 //TODO: Buscar y contribuir. Cada opción podría ser a su vez un Alert.Link as a Button
@@ -17,7 +17,7 @@ export default function HomeMain() {
     <main>
       <Alert className="alert-component py-5" variant="primary">
         <br />
-        <Alert.Heading as="h1" className="alert-heading display-4">
+        <Alert.Heading className="display-5">
           Cronoplast
         </Alert.Heading>
         <p className="alert-oneliner">

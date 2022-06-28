@@ -1,16 +1,9 @@
-
 .alert-component {
-  font-size: large;
   text-align: center;
-  
-}
-
-.alert-heading {
-
 }
 
 .alert-oneliner {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .accordion {
@@ -19,11 +12,9 @@
   margin: 0 auto;
   width: 30%;
   margin-bottom: 80px;
-  
 }
 .accordion-header {
   font-size: 1.3rem;
-  
 }
 
 .search-button {
@@ -37,10 +28,11 @@
 }
 .figure {
   position: relative;
-  top: 40px;
+  top: 15px;
   
 }
 
-.figure-image{
+.figure-image {
   border-radius: 50%;
+
 }

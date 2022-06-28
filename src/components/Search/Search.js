@@ -203,7 +203,7 @@ export default function Search() {
           ) : (
 
             <Col className="px-0">
-            <SearchResult items={items} />
+            <SearchResult items={items} filters={filters} />
             </Col>
           )}
 
