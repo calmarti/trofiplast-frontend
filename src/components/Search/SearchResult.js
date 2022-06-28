@@ -2,20 +2,20 @@ import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Badge from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 //TODO: Paginar con librería y hacer el endpoint correspondiente (o hacer cambios al endpoint existente)
-//TODO: incluir info de los criterio de busqueda utilizados
 //TODO: botón "Back"
 
 export default function SearchResult({ items, filters }) {
-  const itemId = "anyId";
   const criteria = [];
   for (let filter in filters) {
     if (filters[filter]) {
       criteria.push(filter);
     }
   }
+  const navigate = useNavigate();
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function SearchResult({ items, filters }) {
                       <td>{item.area}</td>
                       <td>{item.country}</td>
                       <td>
-                        <Link to={`/items/${itemId}`}>
+                        <Link to={`/items/${item._id}`}>
                           <i className="fa-solid fa-book"></i>
                         </Link>
                       </td>
@@ -63,6 +63,18 @@ export default function SearchResult({ items, filters }) {
                   ))}
                 </tbody>
               </Table>
+
+              <Button
+                href=""
+                size="md"
+                variant="outline-primary"
+                type="button"
+                onClick={(ev) => {
+                  navigate(-1);
+                }}
+              >
+                Back
+              </Button>
             </Alert>
           ) : (
             "There are no items matching those criteria"
