@@ -1,5 +1,6 @@
 .search-alert-component {
   /* font-size: larger; */
+  height: 100vh;
 }
 
 .search-alert-heading,
@@ -14,9 +15,16 @@
 }
 
 .button-container {
-  position: relative;
-  left: 42px;
+margin: 0 auto;
+padding-top:50px;
 }
+
+.year-fields-container{
+  position: relative;
+  left: 250px;
+
+}
+
 
 
 .search-result-alert-heading{

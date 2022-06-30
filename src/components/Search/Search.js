@@ -11,14 +11,11 @@ import SelectCol from "./SelectCol";
 import SearchResult from "./SearchResult";
 import client from "../../api/client";
 
-
 //TODO: bug: el filtro solo por specie devuelve null (combinado con otro criterio sí que funciona)
 //TODO: que la foto quepa en el Home al cargarse
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: handleReset: ojo: button es type reset, ¿está bien? (parece que no: tras reset al hacer submit con filtros no devuelve nada)
 //TODO: componentes que faltan: Error, SearchResult, Pagination, Detail, Contribute, Contact
-
-
 
 export default function Search() {
   const [items, setItems] = useState(null);
@@ -92,13 +89,20 @@ export default function Search() {
             <Sidebar />
           </Col>
 
-          {items===null ? (
+          {items === null ? (
             <Col className="px-0">
-              <Alert className="search-alert-component py-5 my-0" variant="primary">
+              <Alert
+                className="search-alert-component py-5 my-0"
+                variant="primary"
+              >
+                <br />
+                <br />
+                <br />
                 <Alert.Heading className="search-alert-heading">
                   Search the Cronoplast database
                 </Alert.Heading>
                 <hr />
+
                 <p className="search-alert-summary">
                   Cronoplast contains 300 registers of plastic ingestion by
                   animals that spans 120 years in time across several
@@ -108,7 +112,7 @@ export default function Search() {
                 </p>
                 <hr />
                 <br />
-
+                <br />
                 <Form>
                   <Container className="w-50">
                     {/* <Stack className="my-5 py-4 px-5 bg-light border" gap={1}> */}
@@ -172,6 +176,21 @@ export default function Search() {
                     </Row>
                   </Container>
 
+                  <Container className="w-50 my-4 year-fields-container">
+                    <Row>
+                      <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
+                        <Form.Label>From</Form.Label>
+                        <Form.Control className="w-25" type="text" placeholder="A year in YYYY format" />
+                       </Form.Group>
+
+                       <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
+                        <Form.Label>To</Form.Label>
+                        <Form.Control className="w-25" type="text" placeholder="A year in YYYY format" />
+                       </Form.Group>
+
+                    </Row>
+                  </Container>
+
                   {/* Date: 2 input text (years): from y to/*/}
 
                   <Container className="w-50 my-4 button-container">
@@ -202,12 +221,10 @@ export default function Search() {
               </Alert>
             </Col>
           ) : (
-
             <Col className="px-0">
-            <SearchResult items={items} filters={filters} />
+              <SearchResult items={items} filters={filters} />
             </Col>
           )}
-
         </Row>
       </Container>
     </>
