@@ -1,12 +1,17 @@
+/* .row-size{
+  height: 100vh;
+} */
+
+
 .flex-column {
   /* width: 100%; */
-  height: inherit;
+  /* height: 100vh; */
+  /* margin-top:120px; */
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-  font-size: 1.15rem;
-  margin-top:120px;
+  gap: 60px;
+  font-size: 1.2em;
 }
 
 .nav-item {

@@ -14,8 +14,8 @@ import image from "../../images/cronoplast-main.png";
 
 export default function HomeMain() {
   return (
-    <main>
-      <Alert className="alert-component py-5" variant="primary">
+    <main className="main">
+      <Alert  /* style={{height:"100vh"}} */ className="alert-component py-5 my-0" variant="primary">
         <br />
         <Alert.Heading className="display-5">
           Cronoplast
@@ -76,8 +76,8 @@ export default function HomeMain() {
 
         <Figure className="figure">
           <Figure.Image
-            width={640}
-            height={360}
+            width={320}
+            height={240}
             alt=""
             src={image}
             className="figure-image"

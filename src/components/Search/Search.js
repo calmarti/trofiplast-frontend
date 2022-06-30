@@ -11,7 +11,8 @@ import SelectCol from "./SelectCol";
 import SearchResult from "./SearchResult";
 import client from "../../api/client";
 
-//TODO: centrar verticalmente el menú
+
+//TODO: bug: el filtro solo por specie devuelve null (combinado con otro criterio sí que funciona)
 //TODO: que la foto quepa en el Home al cargarse
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: handleReset: ojo: button es type reset, ¿está bien? (parece que no: tras reset al hacer submit con filtros no devuelve nada)
@@ -60,7 +61,7 @@ export default function Search() {
 
   // console.log(fieldValues);
   // console.log(filters);
-  console.log(items);
+  // console.log(items);
 
   const handleChange = (ev) => {
     setFilters((currentState) => ({
@@ -93,7 +94,7 @@ export default function Search() {
 
           {items===null ? (
             <Col className="px-0">
-              <Alert className="search-alert-component py-5" variant="primary">
+              <Alert className="search-alert-component py-5 my-0" variant="primary">
                 <Alert.Heading className="search-alert-heading">
                   Search the Cronoplast database
                 </Alert.Heading>
@@ -145,7 +146,7 @@ export default function Search() {
                       <SelectCol
                         col={Col}
                         label="Species"
-                        name="specices"
+                        name="species"
                         values={fieldValues.species}
                         handleChange={handleChange}
                       />

@@ -8,15 +8,15 @@ body {
   font: inherit;
   font-family: "DM-Sans", Verdana, "Times New Roman";
   box-sizing: border-box;
+
+/*   height: 100vh; */
+/*   border: 1px solid black; */
+
 }
 
-/* :root {
-  
-}
- */
+:root {
 
- 
-/* #root {
-  height: 100vh;
-} */
+}
+
+
 

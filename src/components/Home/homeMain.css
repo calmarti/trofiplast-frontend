@@ -1,5 +1,12 @@
+.main{
+  height: 100vh;
+}
+
 .alert-component {
   text-align: center;
+  height: inherit;
+  /* overflow: hidden; */  /*overflow no resuelve el problema*/
+  /* scroll-behavior:unset;  */   /*scroll-behavior no resuelve el problema!*/
 }
 
 .alert-oneliner {
