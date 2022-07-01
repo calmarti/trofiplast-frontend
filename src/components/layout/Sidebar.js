@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 
 export default function Sidebar() {
   return (
+    <Container fluid>
     <Navbar bg="light" variant="primary" className="h-100" expand="xs" >
      {/*  <Container> */}
         <Nav  className="flex-column">
@@ -18,8 +19,8 @@ export default function Sidebar() {
           {/* <Nav.Link href="">Donate</Nav.Link> */}
           <Nav.Link href="" className="nav-item">Contact</Nav.Link>
         </Nav>
-    {/*   </Container> */}
     </Navbar>
+      </Container>
   );
 }
 

@@ -11,8 +11,11 @@ import SelectCol from "./SelectCol";
 import SearchResult from "./SearchResult";
 import client from "../../api/client";
 
+//TODO: next: terminar Detail
+//TODO: entender bien como funciona el responsiveness de bootstrap
+//TODO: enviar a Gema versión final de la bd pero en xls (mirar lo que me envió, verificar y enviar)
+
 //TODO: bug: el filtro solo por specie devuelve null (combinado con otro criterio sí que funciona)
-//TODO: que la foto quepa en el Home al cargarse
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: handleReset: ojo: button es type reset, ¿está bien? (parece que no: tras reset al hacer submit con filtros no devuelve nada)
 //TODO: componentes que faltan: Error, SearchResult, Pagination, Detail, Contribute, Contact
@@ -180,12 +183,12 @@ export default function Search() {
                     <Row>
                       <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
                         <Form.Label>From</Form.Label>
-                        <Form.Control className="w-25" type="text" placeholder="A year in YYYY format" />
+                        <Form.Control className="w-25" type="text" placeholder="YYYY" />
                        </Form.Group>
 
                        <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
                         <Form.Label>To</Form.Label>
-                        <Form.Control className="w-25" type="text" placeholder="A year in YYYY format" />
+                        <Form.Control className="w-25" type="text" placeholder="YYYY" />
                        </Form.Group>
 
                     </Row>

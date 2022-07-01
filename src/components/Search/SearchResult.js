@@ -55,7 +55,7 @@ export default function SearchResult({ items, filters }) {
                       <td>{item.area}</td>
                       <td>{item.country}</td>
                       <td>
-                        <Link to={`/items/${item._id}`}>
+                        <Link to={`/${item._id}`}>
                           <i className="fa-solid fa-book"></i>
                         </Link>
                       </td>

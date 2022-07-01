@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Sidebar from "../layout/Sidebar";
 import HomeMain from "./HomeMain";
 
-//TODO: col-size no al max-heigth de 100vh NO está funcionando, investigar teoría y mirar Estrimix
+//TODO: get react-router-v6 straight para que el árbol de rutas sea más legible!
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <Col xs={1} className="px-0" >
           <Sidebar />
         </Col>
-        <Col className="col-size px-0">
+        <Col className="px-0">
           <HomeMain />
         </Col>
       </Row>
