@@ -19,8 +19,11 @@ export default function SearchResult({ items, filters }) {
 
   return (
     <>
-      <Alert variant="primary" className="py-5">
-        <Alert.Heading className="search-result-alert-heading">
+    <main className="main">
+      <Alert variant="primary" className="search-result-alert-component py-5 my-0">
+        <br />
+        <br />
+        <Alert.Heading className="alert-heading">
           Searched Items
         </Alert.Heading>
         <Container className="my-5">
@@ -81,6 +84,7 @@ export default function SearchResult({ items, filters }) {
           )}
         </Container>
       </Alert>
+      </main>
     </>
   );
 }

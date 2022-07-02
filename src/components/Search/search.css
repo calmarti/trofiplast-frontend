@@ -1,10 +1,10 @@
-.search-alert-component {
-  /* font-size: larger; */
+.main {
   height: 100vh;
 }
 
-.search-alert-heading,
-.search-alert-summary {
+.alert-heading,
+.alert-summary,
+.alert-heading {
   text-align: center;
   padding-top: 20px;
 }
@@ -15,20 +15,16 @@
 }
 
 .button-container {
-margin: 0 auto;
-padding-top:50px;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.year-fields-container{
+.year-fields-container {
   position: relative;
   left: 250px;
-
 }
 
-
-
-.search-result-alert-heading{
-  text-align: center;
-  padding-top: 20px;
+.search-result-alert-component,
+.detail-alert-component {
+  height: inherit;
 }
-

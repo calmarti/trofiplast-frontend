@@ -86,6 +86,7 @@ export default function Search() {
 
   return (
     <>
+    <main className="main">
       <Container fluid>
         <Row>
           <Col xs={1} className="px-0">
@@ -95,18 +96,18 @@ export default function Search() {
           {items === null ? (
             <Col className="px-0">
               <Alert
-                className="search-alert-component py-5 my-0"
+                className="py-5 my-0"
                 variant="primary"
               >
+             
                 <br />
                 <br />
-                <br />
-                <Alert.Heading className="search-alert-heading">
+                <Alert.Heading className="alert-heading">
                   Search the Cronoplast database
                 </Alert.Heading>
                 <hr />
 
-                <p className="search-alert-summary">
+                <p className="alert-summary">
                   Cronoplast contains 300 registers of plastic ingestion by
                   animals that spans 120 years in time across several
                   geographical areas worldwide. Sources are mainly from
@@ -230,6 +231,7 @@ export default function Search() {
           )}
         </Row>
       </Container>
+      </main>
     </>
   );
 }
