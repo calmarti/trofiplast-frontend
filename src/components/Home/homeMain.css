@@ -1,3 +1,23 @@
+.accordion {
+  position: relative;
+  top: 30px;
+  margin: 0 auto;
+  width:100%;
+  margin-bottom: 80px;
+}
+
+.search-button {
+  margin-top: 2px;
+  width: 300px;
+}
+
+.contrib-button {
+  margin-top: 8px;
+  width: 300px;
+}
+
+@media all and (min-width: 768px){
+
 .main{
   height: 100vh;
 }
@@ -17,9 +37,10 @@
   position: relative;
   top: 30px;
   margin: 0 auto;
-  width: 30%;
+  width: 20%;
   margin-bottom: 80px;
 }
+
 .accordion-header {
   font-size: 1.3rem;
 }
@@ -33,6 +54,7 @@
   margin-top: 8px;
   width: 300px;
 }
+
 .figure {
   position: relative;
   top: 15px;
@@ -41,5 +63,7 @@
 
 .figure-image {
   border-radius: 50%;
+
+}
 
 }

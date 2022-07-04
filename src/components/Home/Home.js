@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Container fluid /* className="row-size" */>
       <Row>
-        <Col xs={1} className="px-0" >
+        <Col md={1} className="px-0" >
           <Sidebar />
         </Col>
         <Col className="px-0">
