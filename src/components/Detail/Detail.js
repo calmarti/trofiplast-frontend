@@ -8,6 +8,7 @@ import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import client from "../../api/client";
 
+
 export default function Detail() {
   const [item, setItem] = useState(null);
   const params = useParams();
@@ -32,18 +33,86 @@ export default function Detail() {
             <Alert variant="primary" className="detail-alert-component py-5">
               <br />
               <br />
-              <Alert.Heading className="alert-heading">Detail</Alert.Heading>
+              {/*  <Alert.Heading className="alert-heading">Search results</Alert.Heading> */}
 
-              <Card border="primary" style={{ width: "40em", margin: "0 auto" }}>
-              <Card.Header>{item && item[0].species}</Card.Header>
-              <Card.Body>
-                <Card.Title>Primary Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              <Card
+                border="primary"
+                style={{ width: "40em", margin: "0 auto" }}
+              >
+                <Card.Header as="h3" className="text-center my-1">
+                  {item && item[0].species}
+                </Card.Header>
+                <Card.Body className="my-5 mx-4">
+                  <Card.Title as="h5">
+                    Taxonomic group:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].group}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Family:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].family}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Genus:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].genus}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Area:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].area}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Country:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].country}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Summary:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].summary}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Years:
+                 {/*  //TODO: campo de bd original */}
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Reference / Contributor:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].reference}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    DOI:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && <a href={item[0].href}>{item[0].href}</a>}
+                    </span>
+                  </Card.Title>
+                </Card.Body>
+              </Card>
             </Alert>
           </main>
         </Col>
