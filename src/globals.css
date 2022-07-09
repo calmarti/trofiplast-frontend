@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap'); */
 
 html,
 body {
@@ -6,17 +7,22 @@ body {
   border: 0;
   font-size: 100%;
   font: inherit;
-  font-family: "DM-Sans", Verdana, "Times New Roman";
+  font-family: "Noto Sans", "DM-Sans", Verdana, "Times New Roman";
   box-sizing: border-box;
+    
 
 /*   height: 100vh; */
 /*   border: 1px solid black; */
 
 }
 
-:root {
+/* #root{
+  height: 100vh;
+} */
 
-}
+/* :root {
+
+}  */
 
 
 

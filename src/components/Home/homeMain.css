@@ -16,10 +16,11 @@
   width: 300px;
 }
 
+
 @media all and (min-width: 768px){
 
-.main{
-  height: 100vh;
+.home-main{
+  height: 100vh;  
 }
 
 .alert-component {

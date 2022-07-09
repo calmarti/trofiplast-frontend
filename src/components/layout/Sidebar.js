@@ -8,10 +8,10 @@ import Nav from "react-bootstrap/Nav";
 
 export default function Sidebar() {
   return (
-    <Container fluid>
-    <Navbar bg="light" variant="primary" className="h-100" expand="xs" >
+    <Container fluid className="viewport-size">
+    <Navbar variant="primary" className="h-100 py-0" expand="xs" >
      {/*  <Container> */}
-        <Nav  className="flex-column">
+        <Nav className="flex-column">
           <Nav.Link href="/" className="nav-item">Home</Nav.Link>
           <Nav.Link href="/search" className="nav-item">Search the database</Nav.Link>
           <Nav.Link href="" className="nav-item">Contribute</Nav.Link>

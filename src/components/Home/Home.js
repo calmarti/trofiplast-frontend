@@ -8,9 +8,9 @@ import HomeMain from "./HomeMain";
 
 export default function Home() {
   return (
-    <Container fluid /* className="row-size" */>
-      <Row>
-        <Col md={1} className="px-0" >
+    <Container fluid className="viewport-size">
+      <Row className="viewport-size">
+        <Col md="auto" className="px-0 viewport-size" >
           <Sidebar />
         </Col>
         <Col className="px-0">

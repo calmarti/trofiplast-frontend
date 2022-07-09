@@ -14,7 +14,7 @@ import image from "../../images/cronoplast-main.png";
 
 export default function HomeMain() {
   return (
-    <main className="main">
+    <main className="home-main">
       <Alert  /* style={{height:"100vh"}} */ className="alert-component py-5 my-0" variant="primary">
         <br />
         <Alert.Heading className="display-5">

@@ -4,6 +4,7 @@ import "./globals.css";
 import "./components/layout/layout.css";
 import "./components/Home/homeMain.css";
 import "./components/Search/search.css";
+import "./components/Detail/detail.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 

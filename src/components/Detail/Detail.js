@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import client from "../../api/client";
 
 
+//TODO: agregar campo origin
+
 export default function Detail() {
   const [item, setItem] = useState(null);
   const params = useParams();
@@ -24,7 +26,7 @@ export default function Detail() {
   return (
     <Container fluid>
       <Row>
-        <Col xs={1} className="px-0">
+        <Col md="auto" className="px-0">
           <Sidebar />
         </Col>
 
@@ -85,7 +87,7 @@ export default function Detail() {
                   <br />
                   <Card.Title as="h5">
                     Summary:
-                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                    <span className="justify" style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && item[0].summary}
                     </span>
@@ -98,14 +100,14 @@ export default function Detail() {
                   <br />
                   <Card.Title as="h5">
                     Reference / Contributor:
-                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                    <span className="justify" style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && item[0].reference}
                     </span>
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
-                    DOI:
+                    Resource:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && <a href={item[0].href}>{item[0].href}</a>}
