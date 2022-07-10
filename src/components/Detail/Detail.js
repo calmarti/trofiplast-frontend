@@ -8,7 +8,6 @@ import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import client from "../../api/client";
 
-
 //TODO: agregar campo origin
 
 export default function Detail() {
