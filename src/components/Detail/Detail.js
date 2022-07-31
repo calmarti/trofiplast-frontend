@@ -30,7 +30,7 @@ export default function Detail() {
         </Col>
 
         <Col className="px-0">
-          <main className="main">
+          <main>
             <Alert variant="primary" className="detail-alert-component py-5">
               <br />
               <br />
@@ -38,17 +38,27 @@ export default function Detail() {
 
               <Card
                 border="primary"
-                style={{ width: "40em", margin: "0 auto" }}
+                style={{ width: "40em", margin: "0 auto" /* height:"100vh" */ }}
+                className="d-flex flex-column justify-content-center"
               >
-                <Card.Header as="h3" className="text-center my-1">
+                <Card.Header as="h3" className="text-center mt-3">
                   {item && item[0].species}
                 </Card.Header>
-                <Card.Body className="my-5 mx-4">
+
+                <Card.Body className="my-1 mx-4">
                   <Card.Title as="h5">
                     Taxonomic group:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && item[0].group}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
+                    Order
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].order}
                     </span>
                   </Card.Title>
                   <br />
@@ -69,6 +79,14 @@ export default function Detail() {
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
+                    Origin
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].origin}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
                     Area:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
@@ -85,21 +103,30 @@ export default function Detail() {
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
+                    Sampling info:
+                    <span style={{ fontSize: "smaller", fontWeight: "400" }}>
+                      {" "}
+                      &nbsp;{item && item[0].sampling_info}
+                    </span>
+                  </Card.Title>
+                  <br />
+                  <Card.Title as="h5">
                     Summary:
-                    <span className="justify" style={{ fontSize: "smaller", fontWeight: "400" }}>
+                    <span
+                      className="justify"
+                      style={{ fontSize: "smaller", fontWeight: "400" }}
+                    >
                       {" "}
                       &nbsp;{item && item[0].summary}
                     </span>
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
-                    Years:
-                 {/*  //TODO: campo de bd original */}
-                  </Card.Title>
-                  <br />
-                  <Card.Title as="h5">
                     Reference / Contributor:
-                    <span className="justify" style={{ fontSize: "smaller", fontWeight: "400" }}>
+                    <span
+                      className="justify"
+                      style={{ fontSize: "smaller", fontWeight: "400" }}
+                    >
                       {" "}
                       &nbsp;{item && item[0].reference}
                     </span>
