@@ -25,6 +25,7 @@ export default function Search() {
   const [error, setError] = useState(null);
   const [fieldValues, setFieldValues] = useState({
     group: [],
+    order: [],
     family: [],
     genus: [],
     species: [],
@@ -35,6 +36,7 @@ export default function Search() {
   });
   const [filters, setFilters] = useState({
     group: "",
+    order: "",
     family: "",
     genus: "",
     species: "",
@@ -78,7 +80,7 @@ export default function Search() {
     ev.preventDefault();
     client
       .get(
-        `${process.env.REACT_APP_API_BASE_URL}/apiv1/items/?group=${filters.group}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
+        `${process.env.REACT_APP_API_BASE_URL}/apiv1/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
       )
       .then((data) => setItems(data.result))
       .catch((error) => console.log(error));
@@ -86,151 +88,161 @@ export default function Search() {
 
   return (
     <>
-    <main className="main">
-      <Container fluid>
-        <Row>
-          <Col md="auto" className="px-0">
-            <Sidebar />
-          </Col>
-
-          {items === null ? (
-            <Col className="px-0">
-              <Alert
-                className="py-5 my-0"
-                variant="primary"
-              >
-             
-                <br />
-                <br />
-                <Alert.Heading className="alert-heading">
-                  Search the Cronoplast database
-                </Alert.Heading>
-                <hr />
-
-                <p className="alert-summary">
-                  Cronoplast contains 300 registers of plastic ingestion by
-                  animals that spans 120 years in time across several
-                  geographical areas worldwide. Sources are mainly from
-                  scientific literature but also include other type of
-                  references.
-                </p>
-                <hr />
-                <br />
-                <br />
-                <Form>
-                  <Container className="w-50">
-                    {/* <Stack className="my-5 py-4 px-5 bg-light border" gap={1}> */}
-                    {/*    <Form.Text>Grupo taxonómico</Form.Text> */}
-
-                    <Row>
-                      <SelectCol
-                        col={Col}
-                        label="General group"
-                        name="group"
-                        values={fieldValues.group}
-                        handleChange={handleChange}
-                      />
-
-                      <SelectCol
-                        col={Col}
-                        label="Family"
-                        name="family"
-                        values={fieldValues.family}
-                        handleChange={handleChange}
-                      />
-                    </Row>
-                  </Container>
-
-                  <Container className="w-50">
-                    <Row>
-                      <SelectCol
-                        col={Col}
-                        label="Genus"
-                        name="genus"
-                        values={fieldValues.genus}
-                        handleChange={handleChange}
-                      />
-
-                      <SelectCol
-                        col={Col}
-                        label="Species"
-                        name="species"
-                        values={fieldValues.species}
-                        handleChange={handleChange}
-                      />
-                    </Row>
-                  </Container>
-
-                  <Container className="w-50">
-                    <Row>
-                      <SelectCol
-                        col={Col}
-                        label="Area"
-                        name="area"
-                        values={fieldValues.area}
-                        handleChange={handleChange}
-                      />
-                      <SelectCol
-                        col={Col}
-                        label="Country"
-                        name="country"
-                        values={fieldValues.country}
-                        handleChange={handleChange}
-                      />
-                    </Row>
-                  </Container>
-
-                  <Container className="w-50 my-4 year-fields-container">
-                    <Row>
-                      <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
-                        <Form.Label>From</Form.Label>
-                        <Form.Control className="w-25" type="text" placeholder="YYYY" />
-                       </Form.Group>
-
-                       <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
-                        <Form.Label>To</Form.Label>
-                        <Form.Control className="w-25" type="text" placeholder="YYYY" />
-                       </Form.Group>
-
-                    </Row>
-                  </Container>
-
-                  {/* Date: 2 input text (years): from y to/*/}
-
-                  <Container className="w-50 my-4 button-container">
-                    <Row xs={2} className="">
-                      <Col xs={{ span: 2, offset: 4 }}>
-                        <Button
-                          size="md"
-                          type="submit"
-                          variant="outline-primary"
-                          onClick={handleSubmit}
-                        >
-                          Submit
-                        </Button>{" "}
-                      </Col>
-                      <Col xs={{ span: 0, offset: 0 }}>
-                        <Button
-                          size="md"
-                          // type="reset"
-                          variant="outline-info"
-                          onClick={handleReset}
-                        >
-                          Reset
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Form>
-              </Alert>
+      <main className="main">
+        <Container fluid>
+          <Row>
+            <Col md="auto" className="px-0">
+              <Sidebar />
             </Col>
-          ) : (
-            <Col className="px-0">
-              <SearchResult items={items} filters={filters} />
-            </Col>
-          )}
-        </Row>
-      </Container>
+
+            {items === null ? (
+              <Col className="px-0">
+                <Alert className="py-5 my-0" variant="primary">
+                  <br />
+                  <br />
+                  <Alert.Heading className="alert-heading">
+                    Search the Cronoplast database
+                  </Alert.Heading>
+                  <hr />
+
+                  <p className="alert-summary">
+                    Cronoplast contains 300 registers of plastic ingestion by
+                    animals that spans 120 years in time across several
+                    geographical areas worldwide. Sources are mainly from
+                    scientific literature but also include other type of
+                    references.
+                  </p>
+                  <hr />
+                  <br />
+                  <br />
+                  <Form>
+                    <Container className="w-50">
+                      <Row>
+                        <SelectCol
+                          col={Col}
+                          label="General group"
+                          name="group"
+                          values={fieldValues.group}
+                          handleChange={handleChange}
+                        />
+
+                        <SelectCol
+                          col={Col}
+                          label="order"
+                          name="order"
+                          values={fieldValues.order}
+                          handleChange={handleChange}
+                        />
+
+                        <SelectCol
+                          col={Col}
+                          label="Family"
+                          name="family"
+                          values={fieldValues.family}
+                          handleChange={handleChange}
+                        />
+                      </Row>
+                    </Container>
+
+                    <Container className="w-50">
+                      <Row>
+                        <SelectCol
+                          col={Col}
+                          label="Genus"
+                          name="genus"
+                          values={fieldValues.genus}
+                          handleChange={handleChange}
+                        />
+
+                        <SelectCol
+                          col={Col}
+                          label="Species"
+                          name="species"
+                          values={fieldValues.species}
+                          handleChange={handleChange}
+                        />
+
+                        <SelectCol
+                          col={Col}
+                          label="Area"
+                          name="area"
+                          values={fieldValues.area}
+                          handleChange={handleChange}
+                        />
+                      </Row>
+                    </Container>
+
+                    <Container className="w-25">
+                      <Row>
+                        <SelectCol
+                          col={Col}
+                          label="Country"
+                          name="country"
+                          values={fieldValues.country}
+                          handleChange={handleChange}
+                          
+                        />
+                      </Row>
+                    </Container>
+
+                    <Container className="w-50 my-4 year-fields-container">
+                      <Row>
+                        <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
+                          <Form.Label>From</Form.Label>
+                          <Form.Control
+                            className="w-25"
+                            type="text"
+                            placeholder="YYYY"
+                          />
+                        </Form.Group>
+
+                        <Form.Group as={Col} xs={{ span: 12 }} className="mx-2">
+                          <Form.Label>To</Form.Label>
+                          <Form.Control
+                            className="w-25"
+                            type="text"
+                            placeholder="YYYY"
+                          />
+                        </Form.Group>
+                      </Row>
+                    </Container>
+
+                    {/* Date: 2 input text (years): from y to/*/}
+
+                    <Container className="w-50 my-4 button-container">
+                      <Row xs={2} className="">
+                        <Col xs={{ span: 2, offset: 4 }}>
+                          <Button
+                            size="md"
+                            type="submit"
+                            variant="outline-primary"
+                            onClick={handleSubmit}
+                          >
+                            Submit
+                          </Button>{" "}
+                        </Col>
+                        <Col xs={{ span: 0, offset: 0 }}>
+                          <Button
+                            size="md"
+                            // type="reset"
+                            variant="outline-info"
+                            onClick={handleReset}
+                          >
+                            Reset
+                          </Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Form>
+                </Alert>
+              </Col>
+            ) : (
+              <Col className="px-0">
+                <SearchResult items={items} filters={filters} />
+              </Col>
+            )}
+          </Row>
+        </Container>
       </main>
     </>
   );
