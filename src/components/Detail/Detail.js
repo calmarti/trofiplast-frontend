@@ -8,8 +8,6 @@ import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import client from "../../api/client";
 
-//TODO: agregar campo origin
-
 export default function Detail() {
   const [item, setItem] = useState(null);
   const params = useParams();
@@ -33,19 +31,19 @@ export default function Detail() {
           <main>
             <Alert variant="primary" className="detail-alert-component py-5">
               <br />
-              <br />
+
               {/*  <Alert.Heading className="alert-heading">Search results</Alert.Heading> */}
 
               <Card
                 border="primary"
-                style={{ width: "40em", margin: "0 auto" /* height:"100vh" */ }}
+                style={{ width: "50em", margin: "0 auto" , height: "90vh" }}
                 className="d-flex flex-column justify-content-center"
               >
-                <Card.Header as="h3" className="text-center mt-3">
+                <Card.Header as="h4" className="text-center mt-5 pb-1">
                   {item && item[0].species}
                 </Card.Header>
 
-                <Card.Body className="my-1 mx-4">
+                <Card.Body className="my-0 py-0 mx-4">
                   <Card.Title as="h5">
                     Taxonomic group:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
