@@ -1,9 +1,7 @@
 import Alert from "react-bootstrap/Alert";
 import Figure from "react-bootstrap/Figure";
-import FigureImage from "react-bootstrap/FigureImage";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
-// import FigureImage from 'react-bootstrap/FigureImage'
 import image from "../../images/cronoplast-main.png";
 
 
@@ -18,7 +16,7 @@ export default function HomeMain() {
       <Alert  /* style={{height:"100vh"}} */ className="alert-component py-5 my-0" variant="primary">
         <br />
         <Alert.Heading className="display-5">
-          Cronoplast
+         Trofiplast
         </Alert.Heading>
         <p className="alert-oneliner">
           A worldwide database of ingested plastics in animals

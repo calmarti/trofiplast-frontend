@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Sidebar from "../layout/Sidebar";
 import HomeMain from "./HomeMain";
 
-//TODO: get react-router-v6 straight para que el árbol de rutas sea más legible!
 
 export default function Home() {
   return (
