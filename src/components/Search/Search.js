@@ -23,6 +23,8 @@ import client from "../../api/client";
 export default function Search() {
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState(true);
+
   const [fieldValues, setFieldValues] = useState({
     group: [],
     order: [],
@@ -59,7 +61,7 @@ export default function Search() {
         )
         .catch((error) => console.log(error));
     }
-  }, []);
+  }, [emptyFields]);
 
   // console.log(fieldValues);
   // console.log(filters);
@@ -73,7 +75,17 @@ export default function Search() {
   };
 
   const handleReset = () => {
-    //reset all filters
+    setFieldValues({
+    group: "",
+    order: "",
+    family: "",
+    genus: "",
+    species: "",
+    area: "",
+    country: "",
+    from: null,
+    to: null,})
+    setEmptyFields(!emptyFields);
   };
 
   const handleSubmit = (ev) => {
@@ -128,7 +140,7 @@ export default function Search() {
 
                         <SelectCol
                           col={Col}
-                          label="order"
+                          label="Order"
                           name="order"
                           values={fieldValues.order}
                           handleChange={handleChange}
@@ -246,140 +258,4 @@ export default function Search() {
       </main>
     </>
   );
-}
-
-{
-  /* <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">General group</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75 select-form"
-                        defaultValue=""
-                        name="group"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.group &&
-                          fieldValues.group.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group> */
-}
-
-{
-  /* <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">Family</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75"
-                        defaultValue=""
-                        name="family"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.family &&
-                          fieldValues.family.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group> */
-}
-
-{
-  /* <Container className="w-50">
-                <Row>
-                  <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">Genus</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75"
-                        defaultValue=""
-                        name="genus"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.genus &&
-                          fieldValues.genus.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group>
-
-                  <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">Species</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75"
-                        defaultValue=""
-                        name="species"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.species &&
-                          fieldValues.species.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group>
-                </Row>
-              </Container> */
-}
-
-{
-  /* <Container className="w-50">
-                <Row>
-                  <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">Area</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75"
-                        defaultValue=""
-                        name="area"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.area &&
-                          fieldValues.area.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group>
-
-                  <Form.Group as={Col} className="mx-2">
-                    <Form.Label>
-                      <span className="select-label">Country</span>
-                      <Form.Select
-                        className="mx-5 my-3 w-75"
-                        defaultValue=""
-                        name="country"
-                        onChange={handleChange}
-                      >
-                        <option></option>
-                        {fieldValues.country &&
-                          fieldValues.country.map((value, index) => (
-                            <option key={index} value={value}>
-                              {value}
-                            </option>
-                          ))}
-                      </Form.Select>
-                    </Form.Label>
-                  </Form.Group>
-                </Row>
-              </Container> */
 }

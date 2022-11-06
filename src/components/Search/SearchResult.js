@@ -38,7 +38,7 @@ export default function SearchResult({ items, filters }) {
                 /* bordered */
                 hover
                 size="sm"
-                variant="primary"
+                variant="primary"convert xls to json
                 responsive="sm"
               >
                 <thead>
