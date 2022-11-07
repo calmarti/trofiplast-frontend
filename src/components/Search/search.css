@@ -28,3 +28,7 @@
 .detail-alert-component {
   height: inherit;
 }
+
+.no-results-message{
+  height:100vh;
+}

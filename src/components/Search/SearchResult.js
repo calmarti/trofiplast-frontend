@@ -80,7 +80,7 @@ export default function SearchResult({ items, filters }) {
               </Button>
             </Alert>
           ) : (
-            "There are no items matching those criteria"
+            <p className="no-results-message">There are no items matching those criteria</p>
           )}
         </Container>
       </Alert>
