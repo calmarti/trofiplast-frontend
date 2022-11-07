@@ -1,3 +1,8 @@
+
+.alert-component{
+height:auto;
+}
+
 .accordion {
   position: relative;
   top: 30px;
@@ -57,14 +62,14 @@
 }
 
 .figure {
-  position: relative;
-  top: 15px;
+
   
 }
 
 .figure-image {
-  border-radius: 50%;
-
+  border-radius: 5%;
+  max-width: 100%;
+  height:auto;
 }
 
 }

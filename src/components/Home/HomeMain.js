@@ -74,8 +74,8 @@ export default function HomeMain() {
 
         <Figure className="figure">
           <Figure.Image
-            width={320}
-            height={240}
+            width={420}
+            height={300}
             alt=""
             src={image}
             className="figure-image"

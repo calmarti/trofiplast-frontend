@@ -111,12 +111,12 @@ export default function Search() {
                   <br />
                   <br />
                   <Alert.Heading className="alert-heading">
-                    Search the Cronoplast database
+                    Search the Trofiplast database
                   </Alert.Heading>
                   <hr />
 
                   <p className="alert-summary">
-                    Cronoplast contains 300 registers of plastic ingestion by
+                    Trofiplast contains 300 registers of plastic ingestion by
                     animals that spans 120 years in time across several
                     geographical areas worldwide. Sources are mainly from
                     scientific literature but also include other type of
