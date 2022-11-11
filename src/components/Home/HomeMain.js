@@ -2,7 +2,7 @@ import Alert from "react-bootstrap/Alert";
 import Figure from "react-bootstrap/Figure";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
-import image from "../../images/cronoplast-main.png";
+import image from "../../images/trofiplast-main.png";
 
 
 //TODO: elemento 'main' pierde la altura del padre (column y row): 16 px menos ==> solución: ajustar la altura de la fila a un valor apropiado (heredada por columnas y todo lo demás)
@@ -61,7 +61,8 @@ export default function HomeMain() {
               </Button>
               <Button
                 as="a"
-                href="/contribute"
+                // href="/contribute"
+                href=""
                 className="contrib-button"
                 size="lg"
                 variant="outline-info"

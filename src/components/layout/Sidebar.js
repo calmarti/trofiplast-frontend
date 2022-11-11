@@ -14,10 +14,11 @@ export default function Sidebar() {
         <Nav className="flex-column">
           <Nav.Link href="/" className="nav-item">Home</Nav.Link>
           <Nav.Link href="/search" className="nav-item">Search the database</Nav.Link>
-          <Nav.Link href="/contribute" className="nav-item">Contribute</Nav.Link>
-          <Nav.Link href="" className="nav-item">About</Nav.Link>
+          {/* <Nav.Link href="/contribute" className="nav-item">Contribute</Nav.Link> */}
+          <Nav.Link href="" className="nav-item">Contribute</Nav.Link>
+          <Nav.Link href="/about" className="nav-item">About</Nav.Link>
+          <Nav.Link href="/contact" className="nav-item">Contact</Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}
-          <Nav.Link href="" className="nav-item">Contact</Nav.Link>
         </Nav>
     </Navbar>
       </Container>
