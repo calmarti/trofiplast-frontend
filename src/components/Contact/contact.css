@@ -1,3 +1,16 @@
 .contact-alert{
     height:100vh;
+
+}
+
+.alert-heading-contact{
+    position:relative;
+    top:12rem;
+}
+.alert-summary-contact{
+    font-size: 1.3rem;
+    position:relative;
+    top:10rem;
+    text-align: center;
+    padding-top:1rem;
 }

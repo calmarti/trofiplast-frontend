@@ -17,12 +17,12 @@ export default function About() {
               <Alert className="about-alert py-5 my-0" variant="primary">
                 <br />
                 <br />
-                <Alert.Heading className="alert-heading">
+                <Alert.Heading className="alert-heading-about">
                  About us
                 </Alert.Heading>
                 <hr />
 
-                <p className="alert-summary">
+                <p className="alert-summary-about">
                  We are ...
                 </p>
               </Alert>

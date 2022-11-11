@@ -1,3 +1,15 @@
 .about-alert{
     height:100vh;
 }
+
+.alert-heading-about{
+    position:relative;
+    top:12rem;
+}
+.alert-summary-about{
+    text-align: center;
+    font-size: 1.3rem;
+    position:relative;
+    top:10rem;
+    padding-top:1rem;
+}

@@ -18,13 +18,13 @@ export default function Contact() {
               <Alert className="contact-alert py-5 my-0" variant="primary">
                 <br />
                 <br />
-                <Alert.Heading className="alert-heading">
+                <Alert.Heading className="alert-heading-contact">
                   Want to contact us?
                 </Alert.Heading>
                 <hr />
 
-                <p className="alert-summary">
-                Drop us your thoughts to improve Trofiplast at ...
+                <p className="alert-summary-contact">
+                Drop us your thoughts to improve Trofiplast at ... insert email here
                 </p>
               </Alert>
             </Col>
