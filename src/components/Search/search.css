@@ -26,7 +26,7 @@
 
 .search-result-alert-component,
 .detail-alert-component {
-  height: inherit;
+  height: auto;
 }
 
 .no-results-message{

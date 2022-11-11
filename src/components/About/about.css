@@ -13,3 +13,21 @@
     top:10rem;
     padding-top:1rem;
 }
+
+.temporary-about-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position:relative;
+    top:10rem;
+    gap:5rem;
+}
+
+.archipelagos-italia{
+
+}
+.archipelagos-link{
+    display:block;   
+    font-size: 1.5rem;
+}

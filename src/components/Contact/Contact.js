@@ -24,7 +24,7 @@ export default function Contact() {
                 <hr />
 
                 <p className="alert-summary-contact">
-                Drop us your thoughts to improve Trofiplast at ... insert email here
+                Drop us your thoughts to improve Trofiplast at <strong>trofiplast@gmail.com</strong>
                 </p>
               </Alert>
             </Col>
