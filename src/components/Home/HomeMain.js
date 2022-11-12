@@ -46,8 +46,8 @@ Hernandez-Milian, G., Martinez-Calcaño, I., Panou, A. and Bundone, L. 2022. TRO
 
         <Figure className="main-figure">
           <Figure.Image
-            width={500}
-            height={280}
+            width={260}
+          
             alt=""
             src={mainImage}
             className="figure-image"
@@ -87,8 +87,7 @@ Hernandez-Milian, G., Martinez-Calcaño, I., Panou, A. and Bundone, L. 2022. TRO
 
         <Figure className="logo-figure">
           <Figure.Image
-            width={340}
-            height={200}
+            width={260}         
             alt=""
             src={logo}
             className="figure-image"

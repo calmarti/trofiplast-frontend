@@ -3,7 +3,7 @@ margin-bottom:2.5rem;
 }
 
 .alert-component{
-height:auto;
+height:110vh;
 }
 
 .accordion {
@@ -34,7 +34,7 @@ height:auto;
 @media all and (min-width: 768px){
 
 .home-main{
-  height: 100vh;  
+  height: 110vh;  
 }
 
 .viewport-size{
@@ -84,13 +84,13 @@ height:auto;
 }
 
 .logo-figure {
-margin-right: 5rem;
-margin-top: 1.7rem;
+margin-right: 8rem;
+margin-top: 1.5rem;
   
 }
 .main-figure{
-  margin-left: 4rem;
-  margin-top:1.7rem;
+  margin-left: 8rem;
+  margin-top:1.5rem;
 }
 
 .figure-image {

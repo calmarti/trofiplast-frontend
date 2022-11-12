@@ -34,7 +34,7 @@ export default function About() {
 
         <Figure className="logo-figure">
           <Figure.Image
-            width={340}
+            width={200}
             height={200}
             alt=""
             src={logo}
