@@ -37,7 +37,9 @@ height:auto;
   height: 100vh;  
 }
 
+.viewport-size{
 
+}
 .alert-heading{
 
 }
@@ -88,7 +90,7 @@ margin-top: 1.7rem;
 }
 .main-figure{
   margin-left: 4rem;
-  margin-top:1.5rem;
+  margin-top:1.7rem;
 }
 
 .figure-image {
