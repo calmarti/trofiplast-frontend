@@ -13,7 +13,7 @@ import logo from "../../images/archipelagos_logo.png";
 export default function HomeMain() {
   return (
     <main className="home-main">
-      <Alert  /* style={{height:"100vh"}} */ className="alert-component" variant="primary">
+      <Alert  className="alert-component" variant="primary">
         <br />
         <Alert.Heading className="display-6 alert-heading">
          Trofiplast
@@ -87,7 +87,7 @@ Hernandez-Milian, G., Martinez-Calcaño, I., Panou, A. and Bundone, L. 2022. TRO
 
         <Figure className="logo-figure">
           <Figure.Image
-            width={260}         
+            width={240}         
             alt=""
             src={logo}
             className="figure-image"
