@@ -9,35 +9,36 @@ import Col from "react-bootstrap/esm/Col";
 
 
 export default function Sidebar() {
-  return (
-   
-      <Row>
-       <Col>
-      <Navbar variant="primary" className="h-100"  expand="xs">
-      <Container fluid className="" >
-        <Nav className="">
-          <Nav.Link href="/" className="nav-item">
+  return (   
+      // <Row>
+      //  <Col>
+      // <Container fluid>
+      <Navbar variant="primary" className="h-100 d-flex flex-column justify-content-center"  expand="xs">
+      {/* <Container fluid className="" > */}
+        <Nav className="custom-nav">
+          <Nav.Link href="/" className="nav-item mb-5">
             Home
           </Nav.Link>
-          <Nav.Link href="/search" className="nav-item">
+          <Nav.Link href="/search" className="nav-item mb-5">
             Search the database
           </Nav.Link>
           {/* <Nav.Link href="/contribute" className="nav-item">Contribute</Nav.Link> */}
-          <Nav.Link href="" className="nav-item">
+          <Nav.Link href="" className="nav-item mb-5">
             Contribute
           </Nav.Link>
-          <Nav.Link href="/about" className="nav-item">
+          <Nav.Link href="/about" className="nav-item mb-5">
             About
           </Nav.Link>
-          <Nav.Link href="/contact" className="nav-item">
+          <Nav.Link href="/contact" className="nav-item mb-5" >
             Contact
           </Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}
         </Nav>
-        </Container>
+        {/* </Container> */}
       </Navbar>
-     </Col>
-     </Row>
+     // </Col> 
+    // </Row> 
+    //  </Container>
 
   );
 }

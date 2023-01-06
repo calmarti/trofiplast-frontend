@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <Container fluid className="">
       <Row className="">
-        <Col lg={1} className="px-0" >
+        <Col lg={2} className="px-0" >
           <Sidebar />
         </Col>
-        <Col lg={11}className="px-0">
+        <Col lg={10}className="px-0">
          <HomeMain />
         </Col>
       </Row>

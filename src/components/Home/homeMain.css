@@ -29,7 +29,7 @@ height:inherit;
   position: relative;
   top: 30px;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   margin-bottom: 80px;
   display:flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ height:inherit;
 
 .accordion {
   margin-top:3rem;
-  width:50%;
+  width:40%;
   /* position: relative;
   top: 30px;
   margin: 0 auto;
