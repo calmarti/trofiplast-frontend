@@ -1,7 +1,17 @@
-.main {
+.main-search { 
   height: auto;
+  overflow: scroll;
 }
 
+.main-search-result {
+  height:auto;
+  overflow: scroll;
+}
+
+/* .table-container {
+height: auto;
+
+} */
 .alert-heading,
 .alert-summary,
 .alert-heading {
@@ -24,9 +34,14 @@
   left: 250px;
 }
 
+/* .alert-search-result {
+  overflow: scroll;
+} */
+
 .search-result-alert-component,
 .detail-alert-component {
   height: auto;
+  overflow: scroll;
 }
 
 .no-results-message{

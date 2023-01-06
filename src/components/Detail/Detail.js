@@ -23,7 +23,7 @@ export default function Detail() {
   return (
     <Container fluid>
       <Row>
-        <Col md="auto" className="px-0">
+        <Col lg={2} className="px-0">
           <Sidebar />
         </Col>
 

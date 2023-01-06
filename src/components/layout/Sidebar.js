@@ -13,10 +13,10 @@ export default function Sidebar() {
       // <Row>
       //  <Col>
       // <Container fluid>
-      <Navbar variant="primary" className="h-100 d-flex flex-column justify-content-center"  expand="xs">
+      <Navbar variant="primary" className="h-100 d-flex flex-column justify-content-center custom-nav"  expand="xs">
       {/* <Container fluid className="" > */}
-        <Nav className="custom-nav">
-          <Nav.Link href="/" className="nav-item mb-5">
+        <Nav className="nav-item">
+          <Nav.Link href="/" className="d-flex flex-column justify-content-center nav-item mb-5">
             Home
           </Nav.Link>
           <Nav.Link href="/search" className="nav-item mb-5">

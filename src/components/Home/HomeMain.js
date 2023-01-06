@@ -78,7 +78,7 @@ export default function HomeMain() {
                   </Accordion.Header>
                   <Accordion.Body>
                     <Container fluid>
-                      <Row className="d-flex flex-column justify-content-center">                     
+                      <Row className="d-flex flex-column">                     
                           <Button
                             as="a"
                             href="/search"

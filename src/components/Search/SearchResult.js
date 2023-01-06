@@ -19,7 +19,7 @@ export default function SearchResult({ items, filters }) {
 
   return (
     <>
-    <main className="main">
+    <main className="main-search-result">
       <Alert variant="primary" className="search-result-alert-component py-5 my-0">
         <br />
         <br />
@@ -34,6 +34,7 @@ export default function SearchResult({ items, filters }) {
           {items.length !== 0 ? (
             <Alert variant="primary">
               <Table
+                // className="alert-search-result"
                 striped
                 /* bordered */
                 hover

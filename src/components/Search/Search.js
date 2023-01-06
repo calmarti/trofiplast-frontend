@@ -98,15 +98,15 @@ export default function Search() {
 
   return (
     <>
-      <main className="main">
+      <main className="main-search">
         <Container fluid>
           <Row>
-            <Col md="auto" className="px-0">
+            <Col lg={2} className="px-0">
               <Sidebar />
             </Col>
 
             {items === null ? (
-              <Col className="px-0">
+              <Col  className="px-0">
                 <Alert className="py-5 my-0" variant="primary">
                   <br />
                   <br />
@@ -249,6 +249,7 @@ export default function Search() {
                 </Alert>
               </Col>
             ) : (
+
               <Col className="px-0">
                 <SearchResult items={items} filters={filters} />
               </Col>

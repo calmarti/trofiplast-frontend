@@ -12,7 +12,7 @@ export default function About() {
       <main>
         <Container fluid>
           <Row>
-            <Col md="auto" className="px-0">
+            <Col md={2} className="px-0">
               <Sidebar />
             </Col>
             <Col className="px-0">
