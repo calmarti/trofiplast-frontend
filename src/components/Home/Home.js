@@ -7,13 +7,13 @@ import HomeMain from "./HomeMain";
 
 export default function Home() {
   return (
-    <Container fluid className="viewport-size">
-      <Row className="viewport-size">
-        <Col md="auto" className="px-0 viewport-size" >
+    <Container fluid className="">
+      <Row className="">
+        <Col lg={1} className="px-0" >
           <Sidebar />
         </Col>
-        <Col className="px-0">
-          <HomeMain />
+        <Col lg={11}className="px-0">
+         <HomeMain />
         </Col>
       </Row>
     </Container>

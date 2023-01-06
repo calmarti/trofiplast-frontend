@@ -27,7 +27,7 @@ export default function Detail() {
           <Sidebar />
         </Col>
 
-        <Col className="px-0">
+        <Col className="px-0 col-detail">
           <main>
             <Alert variant="primary" className="detail-alert-component py-5">
               <br />
