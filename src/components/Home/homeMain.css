@@ -5,11 +5,10 @@ margin-bottom:2.5rem;
 
 
 .alert-component{
-height:120vh !important;
+height:150vh !important;
 margin:0 !important;
 min-height: 100vh;
-max-height: 120vh;
-
+max-height: 150vh;
 
 }
 
