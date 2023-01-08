@@ -24,7 +24,7 @@ export default function Sidebar() {
           </Nav.Link>
           {/* <Nav.Link href="/contribute" className="nav-item">Contribute</Nav.Link> */}
           <Nav.Link href="" className="nav-item">
-            Contribute
+            Contribute items
           </Nav.Link>
           <Nav.Link href="/about" className="nav-item">
             About

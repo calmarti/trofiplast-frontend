@@ -1,3 +1,23 @@
 .col-detail{
     height: auto;
 }
+
+.detail-alert-component {
+  min-height: 120vh !important;
+}
+
+.detail-card {
+min-height:100vh !important;
+width: 85%;
+padding:4rem 4rem 6rem 4rem;
+margin-left:6rem;
+}
+
+.detail-card-title {
+margin-bottom: 4rem !important;
+}
+
+
+.detail-card-body {
+
+}

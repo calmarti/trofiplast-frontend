@@ -22,28 +22,27 @@ export default function Detail() {
 
   return (
     <Container fluid>
-      <Row>
+      <Row className="g-0">
         <Col lg={2} className="px-0">
           <Sidebar />
         </Col>
 
         <Col className="px-0 col-detail">
-          <main>
+          {/* <main> */}
             <Alert variant="primary" className="detail-alert-component py-5">
               <br />
 
               {/*  <Alert.Heading className="alert-heading">Search results</Alert.Heading> */}
 
               <Card
-                border="primary"
-                style={{ width: "50em", margin: "0 auto" , height: "90vh" }}
-                className="d-flex flex-column justify-content-center"
+                border="primary"             
+                className="detail-card"
               >
-                <Card.Header as="h4" className="text-center mt-5 pb-1">
+                <Card.Header as="h4" className="detail-card-title text-center mt-5 pb-1">
                   {item && item[0].species}
                 </Card.Header>
 
-                <Card.Body className="my-0 py-0 mx-4">
+                <Card.Body className="detail-card-body my-0 py-5 mx-4">
                   <Card.Title as="h5">
                     Taxonomic group:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
@@ -77,7 +76,7 @@ export default function Detail() {
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
-                    Origin
+                    Origin:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && item[0].origin}
@@ -140,7 +139,7 @@ export default function Detail() {
                 </Card.Body>
               </Card>
             </Alert>
-          </main>
+          {/* </main> */}
         </Col>
       </Row>
     </Container>

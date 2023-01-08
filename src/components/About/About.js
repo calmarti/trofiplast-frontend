@@ -32,7 +32,7 @@ export default function About() {
         <h2 className="archipelagos-italia">Archipelagos ambiente e sviluppo Italia</h2>
         <a className="archipelagos-link" href="https://archipelagos-org.eu/en/">  Archipelagos environment and development</a>    
 
-        <Figure className="logo-figure">
+        <Figure className="">
           <Figure.Image
             width={200}
             height={200}

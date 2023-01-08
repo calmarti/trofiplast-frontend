@@ -100,7 +100,7 @@ export default function HomeMain() {
                             size="md"
                             variant="outline-info"
                           >
-                            Contribute
+                            Contribute items
                           </Button>
                  
                       </Row>
