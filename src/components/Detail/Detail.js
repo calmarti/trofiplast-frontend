@@ -52,7 +52,7 @@ export default function Detail() {
                   </Card.Title>
                   <br />
                   <Card.Title as="h5">
-                    Order
+                    Order / Class:
                     <span style={{ fontSize: "smaller", fontWeight: "400" }}>
                       {" "}
                       &nbsp;{item && item[0].order}

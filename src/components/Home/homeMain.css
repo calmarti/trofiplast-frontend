@@ -62,10 +62,9 @@ max-height: 150vh;
 } */
 
 .alert-component{
-  height:110vh !important;
-  margin:0 !important;
+  height:150vh !important;
   min-height: 100vh;
-  max-height: 110vh;
+  max-height: 150vh;
   text-align: center;
 }
 .alert-oneliner {
@@ -76,6 +75,7 @@ max-height: 150vh;
 .accordion {
   margin-top:3rem;
   width:40%;
+  /* margin-bottom: 40%; */
   /* position: relative;
   top: 30px;
   margin: 0 auto;
