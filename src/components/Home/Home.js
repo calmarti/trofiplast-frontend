@@ -7,15 +7,15 @@ import HomeMain from "./HomeMain";
 
 export default function Home() {
   return (
-    <Container fluid className="">
-      <Row className="">
-        <Col lg={2} className="px-0" >
+    // <Container fluid className="">
+      <Row className="g-0" >
+        <Col lg={2} >
           <Sidebar />
         </Col>
-        <Col lg={10}className="px-0">
+        <Col lg={10} >
          <HomeMain />
         </Col>
       </Row>
-    </Container>
+    // </Container>
   );
 }

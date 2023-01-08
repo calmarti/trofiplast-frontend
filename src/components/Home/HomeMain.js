@@ -12,8 +12,9 @@ import Row from "react-bootstrap/esm/Row";
 
 export default function HomeMain() {
   return (
-    <main className="home-main">
-      <Alert className="alert-component px-5" variant="primary">
+    // <main>
+ 
+      <Alert className="alert-component" variant="primary" >
         <br />
         <Alert.Heading className="display-6 alert-heading">
           Trofiplast
@@ -104,6 +105,7 @@ export default function HomeMain() {
                  
                       </Row>
                     </Container>
+                    
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -124,6 +126,6 @@ export default function HomeMain() {
           {/* </div> */}
         </Container>
       </Alert>
-    </main>
+  
   );
 }

@@ -98,16 +98,16 @@ export default function Search() {
 
   return (
     <>
-      <main className="main-search">
-        <Container fluid>
-          <Row>
+      {/* <main className="main-search"> */}
+        {/* <Container fluid> */}
+          <Row className="g-0">
             <Col lg={2} className="px-0">
               <Sidebar />
             </Col>
 
             {items === null ? (
-              <Col  className="px-0">
-                <Alert className="py-5 my-0" variant="primary">
+              <Col  className="">
+                <Alert className="search-alert-component py-5 my-0" variant="primary">
                   <br />
                   <br />
                   <Alert.Heading className="alert-heading">
@@ -255,8 +255,8 @@ export default function Search() {
               </Col>
             )}
           </Row>
-        </Container>
-      </main>
+        {/* </Container> */}
+      {/* </main> */}
     </>
   );
 }

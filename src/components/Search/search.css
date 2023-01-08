@@ -1,17 +1,13 @@
-.main-search { 
-  height: auto;
-  overflow: scroll;
-}
+
 
 .main-search-result {
-  height:auto;
-  overflow: scroll;
+  min-height:100vh;
 }
 
-/* .table-container {
-height: auto;
+.search-alert-component {
+  height: 110vh !important;
+}
 
-} */
 .alert-heading,
 .alert-summary,
 .alert-heading {
@@ -34,14 +30,14 @@ height: auto;
   left: 250px;
 }
 
-/* .alert-search-result {
-  overflow: scroll;
-} */
 
-.search-result-alert-component,
+
+.search-result-alert-component{
+ min-height:100vh;
+}
+
 .detail-alert-component {
-  height: auto;
-  overflow: scroll;
+min-height: 120vh;
 }
 
 .no-results-message{

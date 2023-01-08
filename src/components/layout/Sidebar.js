@@ -13,23 +13,23 @@ export default function Sidebar() {
       // <Row>
       //  <Col>
       // <Container fluid>
-      <Navbar variant="primary" className="h-100 d-flex flex-column justify-content-center custom-nav"  expand="xs">
+      <Navbar variant="primary" className="custom-navbar"  expand="xs">
       {/* <Container fluid className="" > */}
-        <Nav className="nav-item">
-          <Nav.Link href="/" className="d-flex flex-column justify-content-center nav-item mb-5">
+        <Nav className="d-flex flex-column justify-content-center align-items-center">
+          <Nav.Link href="/" className="nav-item">
             Home
           </Nav.Link>
-          <Nav.Link href="/search" className="nav-item mb-5">
+          <Nav.Link href="/search" className="nav-item">
             Search the database
           </Nav.Link>
           {/* <Nav.Link href="/contribute" className="nav-item">Contribute</Nav.Link> */}
-          <Nav.Link href="" className="nav-item mb-5">
+          <Nav.Link href="" className="nav-item">
             Contribute
           </Nav.Link>
-          <Nav.Link href="/about" className="nav-item mb-5">
+          <Nav.Link href="/about" className="nav-item">
             About
           </Nav.Link>
-          <Nav.Link href="/contact" className="nav-item mb-5" >
+          <Nav.Link href="/contact" className="nav-item" >
             Contact
           </Nav.Link>
           {/* <Nav.Link href="">Donate</Nav.Link> */}

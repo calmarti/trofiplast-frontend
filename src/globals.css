@@ -11,14 +11,16 @@ body {
   box-sizing: border-box;
   
 
+
+
 /*   height: 100vh; */
 /*   border: 1px solid black; */
 
 }
 
-/* #root{
-  height: 100vh;
-} */
+#root{
+  --bs-gutter-x: 0 !important;
+}
 
 /* :root {
 
