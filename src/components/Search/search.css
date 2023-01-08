@@ -1,11 +1,12 @@
 
 
 .main-search-result {
-  min-height:100vh;
+  min-height:120vh !important;
 }
 
 .search-alert-component {
-  height: 110vh !important;
+  height: 120vh !important;
+  max-height: 120vh !important;
 }
 
 .alert-heading,

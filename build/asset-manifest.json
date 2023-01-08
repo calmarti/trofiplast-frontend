@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.be42817f.css",
-    "main.js": "/static/js/main.61f40313.js",
+    "main.css": "/static/css/main.16de0942.css",
+    "main.js": "/static/js/main.e1a3f5e1.js",
     "static/media/trofiplast-main.png": "/static/media/trofiplast-main.47d94cac599ead8cb8c9.png",
     "static/media/archipelagos_logo.png": "/static/media/archipelagos_logo.b21e69237d31de35e1e6.png",
     "index.html": "/index.html",
-    "main.be42817f.css.map": "/static/css/main.be42817f.css.map",
-    "main.61f40313.js.map": "/static/js/main.61f40313.js.map"
+    "main.16de0942.css.map": "/static/css/main.16de0942.css.map",
+    "main.e1a3f5e1.js.map": "/static/js/main.e1a3f5e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.be42817f.css",
-    "static/js/main.61f40313.js"
+    "static/css/main.16de0942.css",
+    "static/js/main.e1a3f5e1.js"
   ]
 }
