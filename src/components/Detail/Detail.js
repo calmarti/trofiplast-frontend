@@ -14,7 +14,7 @@ export default function Detail() {
   const id = params.id;
 
   useEffect(() => {
-    client.get(`/apiv1/items/${id}`).then((data) => setItem(data.result));
+    client.get(`/api/items/${id}`).then((data) => setItem(data.result));
   }, [id]);
 
   console.log("item", item);

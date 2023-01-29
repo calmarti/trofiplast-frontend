@@ -50,7 +50,7 @@ export default function Search() {
     for (let field in fieldValues) {
       console.log(field);
       client
-        .get(`${process.env.REACT_APP_API_BASE_URL}/apiv1/fields/${field}`)
+        .get(`${process.env.REACT_APP_API_BASE_URL}/api/fields/${field}`)
         .then((data) =>
           setFieldValues((currentState) => ({
             ...currentState,
@@ -90,7 +90,7 @@ export default function Search() {
     ev.preventDefault();
     client
       .get(
-        `${process.env.REACT_APP_API_BASE_URL}/apiv1/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
       )
       .then((data) => setItems(data.result))
       .catch((error) => console.log(error));
