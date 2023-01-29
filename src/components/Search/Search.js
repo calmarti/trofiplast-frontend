@@ -86,6 +86,7 @@ export default function Search() {
     setEmptyFields(!emptyFields);
   };
 
+  
   const handleSubmit = (ev) => {
     ev.preventDefault();
     client
