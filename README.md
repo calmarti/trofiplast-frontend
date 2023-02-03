@@ -7,7 +7,9 @@ A worldwide database of ingested plastics in animals
 ---
 
 Frontend: React and React-bootstrap
+
 Backend:  Express and MongoDB
+
 Deployed on Vercel
 
 ---
