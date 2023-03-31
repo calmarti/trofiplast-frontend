@@ -6,7 +6,7 @@ import Contribute from "./components/Contribute/Contribute";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 
-
+//what does this code do?
 //TODO al ser el menú position fixed ha dejado de ser responsive: fix it
 
 function App() {

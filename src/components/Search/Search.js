@@ -31,6 +31,7 @@ export default function Search() {
     species: [],
     area: [],
     country: [],
+    origin:[],
     // from: null,
     // to: null,
   });
@@ -44,6 +45,7 @@ export default function Search() {
     country: "",
     from: null,
     to: null,
+    origin:""
   });
 
   useEffect(() => {
@@ -81,6 +83,7 @@ export default function Search() {
     species: "",
     area: "",
     country: "",
+    origin:"",
     from: null,
     to: null,})
     setEmptyFields(!emptyFields);
@@ -91,7 +94,7 @@ export default function Search() {
     ev.preventDefault();
     client
       .get(
-        `${process.env.REACT_APP_API_BASE_URL}/api/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}&origin=${filters.origin}`
       )
       .then((data) => setItems(data.result))
       .catch((error) => console.log(error));
@@ -190,6 +193,20 @@ export default function Search() {
                           label="Country"
                           name="country"
                           values={fieldValues.country}
+                          handleChange={handleChange}
+                          
+                        />
+                      </Row>
+                    </Container>
+
+
+                    <Container className="w-25">
+                      <Row>
+                        <SelectCol
+                          col={Col}
+                          label="Origin"
+                          name="origin"
+                          values={fieldValues.origin}
                           handleChange={handleChange}
                           
                         />
