@@ -17,8 +17,6 @@ export default function Detail() {
     client.get(`/api/items/${id}`).then((data) => setItem(data.result));
   }, [id]);
 
-  console.log("item", item);
-  // console.log(item[0].species);
 
   return (
     <Container fluid>
