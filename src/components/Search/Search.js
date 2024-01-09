@@ -48,10 +48,10 @@ export default function Search() {
     origin:""
   });
 
-  useEffect(() => {
+//antiguo useEffect antes de cambiar el endpoint /api/fields/${field} a /api/fields
+/*   useEffect(() => {
     for (let field in fieldValues) {
-      console.log(field);
-      client
+         client
         .get(`${process.env.REACT_APP_API_BASE_URL}/api/fields/${field}`)
         .then((data) =>
           setFieldValues((currentState) => ({
@@ -61,11 +61,16 @@ export default function Search() {
         )
         .catch((error) => console.log(error));
     }
-  }, [emptyFields]);
+  }, [emptyFields]); */
 
-  // console.log(fieldValues);
-  // console.log(filters);
-  // console.log(items);
+  useEffect(()=>{
+    client.get(`${process.env.REACT_APP_API_BASE_URL}/api/fields`)
+    .then(({results})=>setFieldValues((currentState)=>
+    ({...currentState, group: results[0], order: results[1], 
+      family:results[2], genus:results[3], species:results[4],
+      area:results[5], origin:results[6], country:results[7]})))
+   /*.then(({results})=>console.log('results in front',results[0]))*/ 
+  },[emptyFields])
 
   const handleChange = (ev) => {
     setFilters((currentState) => ({

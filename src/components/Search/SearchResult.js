@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 
 //TODO: Paginar con librería y hacer el endpoint correspondiente (o hacer cambios al endpoint existente)
-//TODO: botón "Back"
+//TODO: arreglar botón "Back": debe devolver a Search con todo vacío, no al Home!
 
 export default function SearchResult({ items, filters }) {
   const criteria = [];
@@ -40,7 +40,7 @@ export default function SearchResult({ items, filters }) {
                 hover
                 size="sm"
                 variant="primary"
-                convert xls to json
+               /*  convert xls to json */
                 responsive="sm"
               >
                 <thead>
