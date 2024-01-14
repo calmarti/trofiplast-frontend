@@ -12,18 +12,13 @@ import SearchResult from "./SearchResult";
 import { getFields, getItems } from "../../api/client";
 
 
-//TODO: entender bien como funciona el responsiveness de bootstrap
-
-//TODO: bug: el filtro solo por specie devuelve null (combinado con otro criterio sí que funciona)
 //TODO: 4 estados: formulario sin enviar, tabla de resultados (sin formulario), formulario con mensaje de error y formulario con mensaje de resultado vacío
 //TODO: componentes que faltan: Error, Pagination, Contribute, Contact, About
 
 export default function Search() {
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
-  const [emptyFields, setEmptyFields] = useState(true);
-
-  const [fieldValues, setFieldValues] = useState({
+  const [fieldsValues, setFieldsValues] = useState({
     group: [],
     order: [],
     family: [],
@@ -47,7 +42,8 @@ export default function Search() {
     to: null,
     origin:""
   });
-
+  const [emptyValues, setEmptyValues] = useState(false);
+  
 //antiguo useEffect antes de cambiar el endpoint /api/fields/${field} a /api/fields
 /*   useEffect(() => {
     for (let field in fieldValues) {
@@ -64,24 +60,29 @@ export default function Search() {
   }, [emptyFields]); */
 
   useEffect(()=>{
-    //client.get(`${process.env.REACT_APP_API_BASE_URL}/api/fields`)
     getFields()
-    .then(({results})=>setFieldValues((currentState)=>
+    .then(({results})=>setFieldsValues((currentState)=>
     ({...currentState, group: results[0], order: results[1], 
       family:results[2], genus:results[3], species:results[4],
       area:results[5], origin:results[6], country:results[7]})))
-   /*.then(({results})=>console.log('results in front',results[0]))*/ 
-  },[emptyFields])
+
+  },[emptyValues])
 
   const handleChange = (ev) => {
     setFilters((currentState) => ({
       ...currentState,
       [ev.target.name]: ev.target.value,
-    }));
+      }));
+     
   };
 
-  const handleReset = () => {
-    setFieldValues({
+
+  //handleReset muy optimizable: cada vez que hay un reset hace una nueva llamada al api (ineficiente)
+  //fixes posibles: 
+  //(a) setear cada select sin llamar al api, por ejemplo, usando un botón nativo de type = reset
+  //(b) crear un estado global tipo redux o con algún hook ad hoc para estado global
+    const handleReset = ()=> {
+    setFieldsValues({
     group: "",
     order: "",
     family: "",
@@ -89,12 +90,12 @@ export default function Search() {
     species: "",
     area: "",
     country: "",
-    origin:"",
     from: null,
-    to: null,})
-    setEmptyFields(!emptyFields);
+    to: null,
+    origin:"",
+   })
+   setEmptyValues(!emptyValues); 
   };
-
   
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -137,7 +138,7 @@ export default function Search() {
                           col={Col}
                           label="General group"
                           name="group"
-                          values={fieldValues.group}
+                          values={fieldsValues.group}
                           handleChange={handleChange}
                         />
 
@@ -145,7 +146,7 @@ export default function Search() {
                           col={Col}
                           label="Order"
                           name="order"
-                          values={fieldValues.order}
+                          values={fieldsValues.order}
                           handleChange={handleChange}
                         />
 
@@ -153,7 +154,7 @@ export default function Search() {
                           col={Col}
                           label="Family"
                           name="family"
-                          values={fieldValues.family}
+                          values={fieldsValues.family}
                           handleChange={handleChange}
                         />
                       </Row>
@@ -165,7 +166,7 @@ export default function Search() {
                           col={Col}
                           label="Genus"
                           name="genus"
-                          values={fieldValues.genus}
+                          values={fieldsValues.genus}
                           handleChange={handleChange}
                         />
 
@@ -173,7 +174,7 @@ export default function Search() {
                           col={Col}
                           label="Species"
                           name="species"
-                          values={fieldValues.species}
+                          values={fieldsValues.species}
                           handleChange={handleChange}
                         />
 
@@ -181,7 +182,7 @@ export default function Search() {
                           col={Col}
                           label="Area"
                           name="area"
-                          values={fieldValues.area}
+                          values={fieldsValues.area}
                           handleChange={handleChange}
                         />
                       </Row>
@@ -193,7 +194,7 @@ export default function Search() {
                           col={Col}
                           label="Country"
                           name="country"
-                          values={fieldValues.country}
+                          values={fieldsValues.country}
                           handleChange={handleChange}
                           
                         />
@@ -207,7 +208,7 @@ export default function Search() {
                           col={Col}
                           label="Origin"
                           name="origin"
-                          values={fieldValues.origin}
+                          values={fieldsValues.origin}
                           handleChange={handleChange}
                           
                         />
@@ -238,7 +239,7 @@ export default function Search() {
                       </Row>
                     </Container>
 
-                    {/* Date: 2 input text (years): from y to/*/}
+               
 
                     <Container className="w-50 my-4 button-container">
                       <Row xs={2} className="">
@@ -274,8 +275,6 @@ export default function Search() {
               </Col>
             )}
           </Row>
-        {/* </Container> */}
-      {/* </main> */}
     </>
   );
 }
