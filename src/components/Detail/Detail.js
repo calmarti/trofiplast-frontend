@@ -6,7 +6,7 @@ import Sidebar from "../layout/Sidebar";
 import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
-import client from "../../api/client";
+import client, { getItemDetail } from "../../api/client";
 
 export default function Detail() {
   const [item, setItem] = useState(null);
@@ -14,7 +14,8 @@ export default function Detail() {
   const id = params.id;
 
   useEffect(() => {
-    client.get(`/api/items/${id}`).then((data) => setItem(data.result));
+    getItemDetail(id)
+    .then((data) => setItem(data.result));
   }, [id]);
 
 

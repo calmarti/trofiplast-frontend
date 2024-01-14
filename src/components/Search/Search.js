@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 import SelectCol from "./SelectCol";
 import SearchResult from "./SearchResult";
-import client from "../../api/client";
+import { getFields, getItems } from "../../api/client";
 
 
 //TODO: entender bien como funciona el responsiveness de bootstrap
@@ -64,7 +64,8 @@ export default function Search() {
   }, [emptyFields]); */
 
   useEffect(()=>{
-    client.get(`${process.env.REACT_APP_API_BASE_URL}/api/fields`)
+    //client.get(`${process.env.REACT_APP_API_BASE_URL}/api/fields`)
+    getFields()
     .then(({results})=>setFieldValues((currentState)=>
     ({...currentState, group: results[0], order: results[1], 
       family:results[2], genus:results[3], species:results[4],
@@ -97,19 +98,14 @@ export default function Search() {
   
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    client
-      .get(
-        `${process.env.REACT_APP_API_BASE_URL}/api/items/?group=${filters.group}&order=${filters.order}&family=${filters.family}&genus=${filters.genus}&species=${filters.species}&area=${filters.area}&country=${filters.country}&origin=${filters.origin}`
-      )
+       getItems(filters.group, filters.order, filters.family, filters.genus, filters.species, filters.area, filters.country, filters.origin)
       .then((data) => setItems(data.result))
       .catch((error) => console.log(error));
   };
 
   return (
     <>
-      {/* <main className="main-search"> */}
-        {/* <Container fluid> */}
-          <Row className="g-0">
+            <Row className="g-0">
             <Col lg={2} className="px-0">
               <Sidebar />
             </Col>
